@@ -33,29 +33,31 @@
     <div class="userGoal" id="userGoal">
         <h3>What's your goal?</h3>
         <div class="weightLoss">
-            <input id="weightLoss" type="radio" value="weightLoss" name="goal">
+            <input id="weightLoss" type="radio" value="Lose Weight" name="goal" onclick="setMyGoal(this.value)">
             <label for="weightLoss">Lose weight</label>
         </div>
         <div class="weightManage">
-            <input id="weightManage" type="radio" value="weightManage" name="goal">
+            <input id="weightManage" type="radio" value="Maintain Weight" name="goal" onclick="setMyGoal(this.value)">
             <label for="weightManage">Maintain weight</label>
         </div>
         <div class="weightGain">
-            <input id="weightGain" type="radio" value="weightGain" name="goal">
+            <input id="weightGain" type="radio" value="Gain Weight" name="goal" onclick="setMyGoal(this.value)">
             <label for="weightGain">Gain weight</label>
         </div>
+        <p id="goal"></p>
     </div>
 
     <div class="userSex">
         <h3>Choose your sex</h3>
         <div class="male">
-            <input id="male" type="radio" value="Male" name="sex">
+            <input id="male" type="radio" value="Male" name="sex" onclick="setMySex(this.value)">
             <label for="male">Male</label>
         </div>
         <div class="female">
-            <input id="female" type="radio" value="Female" name="sex">
+            <input id="female" type="radio" value="Female" name="sex" onclick="setMySex(this.value)">
             <label for="female">Female</label>
         </div>
+        <p id="sex"></p>
     </div>
 
     <div class="userMetrics">
@@ -69,62 +71,65 @@
     <div class="userJob">
         <h3>Select your job type</h3>
         <div class="deskJob">
-            <input id="deskJob" type="radio" value="deskJob" name="job">
+            <input id="deskJob" type="radio" value="Desk Job" name="job" onclick="setMyJob(this.value)">
             <label for="deskJob">Desk Job</label>
         </div>
         <div class="warehouseJob">
-            <input id="warehouseJob" type="radio" value="warehouseJob" name="job">
+            <input id="warehouseJob" type="radio" value="Warehouse Job" name="job" onclick="setMyJob(this.value)">
             <label for="warehouseJob">Warehouse Job</label>
         </div>
         <div class="fieldJob">
-            <input id="fieldJob" type="radio" value="fieldJob" name="job">
+            <input id="fieldJob" type="radio" value="FieldJob" name="job" onclick="setMyJob(this.value)">
             <label for="fieldJob">Field Job</label>
         </div>
+        <p id="job"></p>
     </div>
 
     <div class="userExercise">
-        <h3>Describe your exercise</h3>
+        <h3>Describe your activity</h3>
         <div class="noExercise">
-            <input id="noExercise" type="radio" value="noExercise" name="exercise">
-            <label for="noExercise">I don't move</label>
+            <input id="noExercise" type="radio" value="1000+ steps/day" name="activity" onclick="setMyActivity(this.value)">
+            <label for="noExercise">1000+ steps/day</label>
         </div>
         <div class="lightExercise">
-            <input id="lightExercise" type="radio" value="lightExercise" name="exercise">
-            <label for="lightExercise">I walk ~3000 steps/day</label>
+            <input id="lightExercise" type="radio" value="3000+ steps/day" name="activity" onclick="setMyActivity(this.value)">
+            <label for="lightExercise">3000+ steps</label>
         </div>
         <div class="moderateExercise">
-            <input id="moderateExercise" type="radio" value="moderateExercise" name="exercise">
-            <label for="moderateExercise">I walk ~6000 steps/day</label>
+            <input id="moderateExercise" type="radio" value="6000+ steps/day" name="activity" onclick="setMyActivity(this.value)">
+            <label for="moderateExercise">6000+ steps/day</label>
         </div>
         <div class="hardExercise">
-            <input id="hardExercise" type="radio" value="hardExercise" name="exercise">
-            <label for="hardExercise">I walk ~10000 steps/day</label>
+            <input id="hardExercise" type="radio" value="10,000+ steps/day" name="activity" onclick="setMyActivity(this.value)">
+            <label for="hardExercise">10,000+ steps/day</label>
         </div>
+        <p id="activity"></p>
     </div>
 
-    <div class="userGoalRange">
+    <div class="sliderContainer">
         <h3>How fast you want to achieve your goal?</h3>
-        <input id="howFast" type="range" size="100">
+        <input id="goalRange" type="range" size="100">
     </div>
 
     <div class="userDiet">
         <h3>What diet do you prefer?</h3>
         <div class="balanced">
-            <input id="balanced" type="radio" value="balanced" name="diet">
-            <label for="balanced">Balanced diet</label>
+            <input id="balanced" type="radio" value="Balanced" name="diet" onclick="setMyDiet(this.value)">
+            <label for="balanced">Balanced</label>
         </div>
         <div class="eggetarian">
-            <input id="eggetarian" type="radio" value="eggetarian" name="diet">
+            <input id="eggetarian" type="radio" value="Eggetarian" name="diet" onclick="setMyDiet(this.value)">
             <label for="eggetarian">Eggetarian</label>
         </div>
         <div class="vegetarian">
-            <input id="vegetarian" type="radio" value="vegetarian" name="diet">
+            <input id="vegetarian" type="radio" value="Vegetarian" name="diet" onclick="setMyDiet(this.value)">
             <label for="vegetarian">Vegetarian</label>
         </div>
+        <p id="diet"></p>
     </div>
 
     <div class="sumbitBtn">
-        <input id="submitBtn" type="submit" value="Create your goal" onclick="submitForm(); setNames();">
+        <input id="submitBtn" type="submit" value="Create your goal" onclick="submitForm(); setDetails();">
     </div>
     </form>
     </div>

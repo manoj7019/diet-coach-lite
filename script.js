@@ -2,23 +2,13 @@ function submitForm() {
     document.getElementById('submitForm').submit();
 }
 
-function setNames() {
+function setDetails() {
     let name = document.getElementById('userName').value;
     localStorage.setItem('names', name);
     let email = document.getElementById('userEmail').value;
     localStorage.setItem('emails', email);
     let password = document.getElementById('userPassword').value;
     localStorage.setItem('passwords', password);
-    let weightLoss = document.getElementById('weightLoss').value;
-    localStorage.setItem('weightLosses', weightLoss);
-    let weightManage = document.getElementById('weightManage').value;
-    localStorage.setItem('weightManages', weightManage);
-    let weightGain = document.getElementById('weightGain').value;
-    localStorage.setItem('weightGains', weightGain);
-    let male = document.getElementById('male').value;
-    localStorage.setItem('males', male);
-    let female = document.getElementById('female').value;
-    localStorage.setItem('females', female);
     let currentWeight = document.getElementById('currentWeight').value;
     localStorage.setItem('currentWeights', currentWeight);
     let goalWeight = document.getElementById('goalWeight').value;
@@ -27,7 +17,7 @@ function setNames() {
     localStorage.setItem('heights', height);
     let waist = document.getElementById('waist').value;
     localStorage.setItem('waists', waist);
-    let balanced = document.getElementById('balanced').value;
+    /* let balanced = document.getElementById('balanced').value;
     localStorage.setItem('balanceds', balanced);
     let eggetarian = document.getElementById('eggetarian').value;
     localStorage.setItem('eggetarians', eggetarian);
@@ -46,26 +36,16 @@ function setNames() {
     let moderateExercise = document.getElementById('moderateExercise').value;
     localStorage.setItem('moderateExercises', moderateExercise);
     let hardExercise = document.getElementById('hardExercise').value;
-    localStorage.setItem('hardExercises', hardExercise);
+    localStorage.setItem('hardExercises', hardExercise); */
 };
 
-function getNames() {
+function getDetails() {
     let name = localStorage.getItem('names');
     console.log(name);
     let email = localStorage.getItem('emails');
     console.log(email);
     let password = localStorage.getItem('passwords');
     console.log(password);
-    let weightLoss = localStorage.getItem('weightLosses');
-    console.log(weightLoss);
-    let weightManage = localStorage.getItem('weightManages');
-    console.log(weightManage);
-    let weightGain = localStorage.getItem('weightGains');
-    console.log(weightGain);
-    let male = localStorage.getItem('males');
-    console.log(male);
-    let female = localStorage.getItem('females');
-    console.log(female);
     let currentWeight = localStorage.getItem('currentWeights');
     console.log(currentWeight);
     let goalWeight = localStorage.getItem('goalWeights');
@@ -74,7 +54,7 @@ function getNames() {
     console.log(height);
     let waist = localStorage.getItem('waists');
     console.log(waist);
-    let balanced = localStorage.getItem('balanceds');
+    /* let balanced = localStorage.getItem('balanceds');
     console.log(balanced);
     let eggetarian = localStorage.getItem('eggetarians');
     console.log(eggetarian);
@@ -93,15 +73,54 @@ function getNames() {
     let moderateExercise = localStorage.getItem('moderateExercises');
     console.log(moderateExercise);
     let hardExercise = localStorage.getItem('hardExercises');
-    console.log(hardExercise);
+    console.log(hardExercise); */
+}
+// set-get Goal 
+function setMyGoal(goal) {
+    document.getElementById('goal').value = goal;
+    localStorage.setItem('userGoals', goal);
+}
+function getMyGoal() {
+    let userGoal = localStorage.getItem('userGoals');
+    console.log(userGoal);
 }
 
-/* function setEmails() {
-    let email = document.getElementById('userEmail').value;
-    localStorage.setItem('emails', email);
+// set-get Sex 
+function setMySex(sex) {
+    document.getElementById('sex').value = sex;
+    localStorage.setItem('userSexs', sex);
+}
+function getMySex() {
+    let userSex = localStorage.getItem('userSexs');
+    console.log(userSex);
 }
 
-function getEmails() {
-    let email = localStorage.getItem('emails');
-    console.log(email);
-} */
+// set-get Job
+function setMyJob(job) {
+    document.getElementById('job').value = job;
+    localStorage.setItem('userJobs', job);
+}
+function getMyJob() {
+    let userJob = localStorage.getItem('userJobs');
+    console.log(userJob);
+}
+
+// set-get Activity
+function setMyActivity(activity) {
+    document.getElementById('activity').value = activity;
+    localStorage.setItem('userActivitys', activity);
+}
+function getMyActivity() {
+    let userActivity = localStorage.getItem('userActivitys');
+    console.log(userActivity);
+}
+
+// set-get Diet
+function setMyDiet(diet) {
+    document.getElementById('diet').value = diet;
+    localStorage.setItem('userDiets', diet);
+}
+function getMyDiet() {
+    let userDiet = localStorage.getItem('userDiets');
+    console.log(userDiet);
+}
