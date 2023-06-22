@@ -36,6 +36,10 @@ body {
     align-items: flex-start;
 }
 
+.userGoalRange {
+    width: 100%;
+}
+
 h3 {
     color: rgb(9, 149, 200);
     font-weight: 600;
@@ -57,7 +61,18 @@ input[type=password] {
     border-radius: 0.3rem;
 }
 
+/* #goalRange {
+} */
+
 #submitBtn {
     margin: 1rem;
 }
+
+/* .weightLoss,
+.weightManage,
+.weightGain {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} */
 

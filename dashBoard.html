@@ -6,9 +6,30 @@
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
 </head>
-<body>
-    <p class="detailsOutput">details</p>
-    <button onclick="getDetails(); getMyGoal(); getMySex(); getMyJob(); getMyActivity(); getMyDiet()" >Click me!</button>
+<body onload="getDetails(); getMyGoal(); getMySex(); getMyJob(); getMyActivity(); getMyDiet();">
+    <h2>Does everything look okay?</h1>
+    <h3>Your Goal</h3>
+        <p>Goal</p>
+        <p id="goalD">Goal</p>
+        <p>Goal rate</p>
+        <p id="goalRateD">Goal rate</p>
+        <p>Goal weight</p>
+        <p id="goalWeightD">Goal weight</p>
+        <p>Diet type</p>
+        <p id="dietTypeD">Diet type</p>
+    <h3>Your metrics</h3>
+        <p>Current weight</p>
+        <p id="currentWeightD">Current weight</p>
+        <p>Height</p>
+        <p id="heightD">Height</p>
+        <p>Waist measurement</p>
+        <p id="waistD">Waist measurement</p>
+    <h3>Your lifestyle</h3>
+        <p>Job</p>
+        <p id="jobD">Job</p>
+        <p>Activity</p>
+        <p id="activityD">Activity</p>
+    <button onclick="getDetails(); getMyGoal(); getMySex(); getMyJob(); getMyActivity(); getMyDiet()" >Create your goal!</button>
     <p class="para"></p>
     <a href="./profile.html">Go to profile</a>
     <script src="./script.js"></script>

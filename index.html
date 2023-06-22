@@ -18,30 +18,30 @@
     <div class="name">
         <div class="userName">
             <label for="userName">Name</label>
-            <input type="text" id="userName"/>
+            <input type="text" id="userName" class="inputs" placeholder=" Your name" onkeyup="checkForm()"/>
         </div>
         <div class="userEmail">
             <label for="userEmail">Email</label>
-            <input type="email" id="userEmail"/>
+            <input type="email" id="userEmail" class="inputs" placeholder=" Your email" onkeyup="checkForm()"/>
         </div>
         <div class="userPassword">
             <label for="userPassword">Password</label>
-            <input type="password" id="userPassword"/>
+            <input type="password" id="userPassword" class="inputs" onkeyup="checkForm()"/>
         </div>
     </div>
 
     <div class="userGoal" id="userGoal">
         <h3>What's your goal?</h3>
         <div class="weightLoss">
-            <input id="weightLoss" type="radio" value="Lose Weight" name="goal" onclick="setMyGoal(this.value)">
+            <input class="gRadio" id="weightLoss" type="radio" value="Lose Weight" name="goal" onclick="setMyGoal(this.value);">
             <label for="weightLoss">Lose weight</label>
         </div>
         <div class="weightManage">
-            <input id="weightManage" type="radio" value="Maintain Weight" name="goal" onclick="setMyGoal(this.value)">
+            <input class="gRadio" id="weightManage" type="radio" value="Maintain Weight" name="goal" onclick="setMyGoal(this.value);">
             <label for="weightManage">Maintain weight</label>
         </div>
         <div class="weightGain">
-            <input id="weightGain" type="radio" value="Gain Weight" name="goal" onclick="setMyGoal(this.value)">
+            <input class="gRadio" id="weightGain" type="radio" value="Gain Weight" name="goal" onclick="setMyGoal(this.value);">
             <label for="weightGain">Gain weight</label>
         </div>
         <p id="goal"></p>
@@ -62,10 +62,10 @@
 
     <div class="userMetrics">
         <h3>Add your metrics</h3>
-        <input id="currentWeight" type="text" placeholder=" Current weight (Kg)">
-        <input id="goalWeight" type="text" placeholder=" Goal weight (Kg)">
-        <input id="height" type="text" placeholder=" Height (cm)">
-        <input id="waist" type="text" placeholder=" Waist measurement (cm)">
+        <input class="inputs" id="currentWeight" type="text" placeholder=" Current weight (Kg)" onkeyup="checkForm()">
+        <input class="inputs" id="goalWeight" type="text" placeholder=" Goal weight (Kg)" onkeyup="checkForm()">
+        <input class="inputs" id="height" type="text" placeholder=" Height (cm)" onkeyup="checkForm()">
+        <input class="inputs" id="waist" type="text" placeholder=" Waist measurement (cm)" onkeyup="checkForm()">
     </div>
 
     <div class="userJob">
@@ -106,9 +106,10 @@
         <p id="activity"></p>
     </div>
 
-    <div class="sliderContainer">
+    <div class="userGoalRange">
         <h3>How fast you want to achieve your goal?</h3>
-        <input id="goalRange" type="range" size="100">
+        <input id="goalRange" type="range" min="10" max="100" value="40">
+        <p id="outputG"></p>
     </div>
 
     <div class="userDiet">
@@ -129,7 +130,7 @@
     </div>
 
     <div class="sumbitBtn">
-        <input id="submitBtn" type="submit" value="Create your goal" onclick="submitForm(); setDetails();">
+        <input id="submitBtn" type="submit" value="Create your goal" onclick="submitForm(); setDetails();" disabled>
     </div>
     </form>
     </div>
