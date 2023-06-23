@@ -7,6 +7,7 @@ const goalWeightD = document.querySelector('#goalWeightD');
 const currentWeightD = document.querySelector('#currentWeightD');
 const heightD = document.querySelector('#heightD');
 const waistD = document.querySelector('#waistD');
+const heyUser = document.querySelector('#heyUser');
 
 function setDetails() {
     let name = document.getElementById('userName').value;
@@ -47,6 +48,7 @@ function setDetails() {
 
 function getDetails() {
     let name = localStorage.getItem('names');
+    heyUser.textContent = `Hey ${name},` || {};
     console.log(name);
     let email = localStorage.getItem('emails');
     console.log(email);
@@ -108,6 +110,17 @@ function getMySex() {
     console.log(userSex);
 }
 
+// set-get DOB
+const dOB = document.querySelector('#dOB');
+function setMyDOB() {
+    let userDOB = document.getElementById('userDOB').value;
+    localStorage.setItem('userDOBs', userDOB);
+}
+function getMyDOB() {
+    let userDOB = localStorage.getItem('userDOBs');
+    console.log(userDOB);
+} 
+
 // set-get Job
 const jobD = document.querySelector('#jobD');
 function setMyJob(job) {
@@ -144,21 +157,29 @@ function getMyDiet() {
     console.log(userDiet);
 }
 
+// goal-rate 
+
 // slider-userGoalRange
+const goalRange = document.getElementById('goalRange') || {};
+const outputG = document.querySelector('#outputG') || {};
+const outputGM = document.querySelector('#outputGM') || {};
+outputG.textContent = `0.35 kg/week (recommended)`;
+outputGM.textContent = `1.4 kg/month`;
+const goalRateD = document.querySelector('#goalRateD');
 
-const goalRange = document.getElementById('goalRange');
-const outputG = document.querySelector('#outputG');
-outputG.textContent = `0.35kg/week (recommended)`;
-
-goalRange.oninput = function() {
-    if(this.value/100 <= 0.3) {
-        outputG.textContent = `${this.value/100} kg/week (slower)`;
-    } else if (this.value/100 >=0.71) {
-        outputG.textContent = `${this.value/100} kg/week (faster)`;
+function myFunction(value) {
+    if(value/100 <= 0.24) {
+        outputG.textContent = `${value/100} kg/week (slower)`;
+        outputGM.textContent = `${(value/100)*4} kg/month`;
+    } else if (value/100 >=0.71) {
+        outputG.textContent = `${value/100} kg/week (faster)`;
+        outputGM.textContent = `${(value/100)*4} kg/month`;
     } else {
-        outputG.textContent = `${this.value/100} kg/week (recommended)`;
+        outputG.textContent = `${value/100} kg/week (recommended)`;
+        outputGM.textContent = `${(value/100)*4} kg/month`;
     }
 }
+
 
 function checkForm() {
     let inputs = document.getElementsByClassName('inputs');

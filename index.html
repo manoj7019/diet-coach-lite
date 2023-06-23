@@ -17,16 +17,16 @@
     <form id="submitForm" method="get" action="./dashBoard.html">
     <div class="name">
         <div class="userName">
-            <label for="userName">Name</label>
-            <input type="text" id="userName" class="inputs" placeholder=" Your name" onkeyup="checkForm()"/>
+            <label for="userName">Your 'nickname'</label>
+            <input type="text" id="userName" class="inputs" placeholder=" your nickname" onkeyup="checkForm()"/>
         </div>
         <div class="userEmail">
             <label for="userEmail">Email</label>
-            <input type="email" id="userEmail" class="inputs" placeholder=" Your email" onkeyup="checkForm()"/>
+            <input type="email" id="userEmail" class="inputs" placeholder=" your email" onkeyup="checkForm()"/>
         </div>
         <div class="userPassword">
             <label for="userPassword">Password</label>
-            <input type="password" id="userPassword" class="inputs" onkeyup="checkForm()"/>
+            <input type="password" id="userPassword" class="inputs" placeholder=" password" onkeyup="checkForm()"/>
         </div>
     </div>
 
@@ -58,6 +58,13 @@
             <label for="female">Female</label>
         </div>
         <p id="sex"></p>
+    </div>
+
+    <div class="userDOB">
+        <h3>Your date of birth</h3>
+        <!-- <label for="userDOB">Date of birth</label> -->
+        <input type="date" id="userDOB" placeholder=" your date of birth"/>
+        <p id="dOB"></p>
     </div>
 
     <div class="userMetrics">
@@ -108,8 +115,9 @@
 
     <div class="userGoalRange">
         <h3>How fast you want to achieve your goal?</h3>
-        <input id="goalRange" type="range" min="10" max="100" value="40">
+        <input id="goalRange" name="range" type="range" min="10" max="100" value="35" oninput="myFunction(this.value)">
         <p id="outputG"></p>
+        <p id="outputGM"></p>
     </div>
 
     <div class="userDiet">
@@ -130,7 +138,7 @@
     </div>
 
     <div class="sumbitBtn">
-        <input id="submitBtn" type="submit" value="Create your goal" onclick="submitForm(); setDetails();" disabled>
+        <input id="submitBtn" type="submit" value="Create your goal" onclick="submitForm(); setDetails(); setMyDOB();" disabled>
     </div>
     </form>
     </div>

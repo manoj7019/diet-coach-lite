@@ -25,6 +25,7 @@ body {
 .name,
 .userGoal,
 .userSex,
+.userDOB,
 .userMetrics,
 .userJob,
 .userExercise,
@@ -51,6 +52,7 @@ h3 {
 .userPassword {
     display: flex;
     flex-direction: column;
+    margin-bottom: 0.4rem;
 }
 
 input[type=text],
@@ -58,8 +60,11 @@ input[type=email],
 input[type=password] {
     width: 15rem;
     height: 1.5rem;
+    border: 0.1rem solid black;
     border-radius: 0.3rem;
+    margin: 0.2rem 0 0 0
 }
+
 
 /* #goalRange {
 } */
@@ -76,3 +81,73 @@ input[type=password] {
     justify-content: space-between;
 } */
 
+/* dashBoardPage */
+
+.yourGoalDP,
+.yourMetricsDP,
+.yourLifestyleDP {
+    margin: 1rem 2rem;
+    width: 100%;
+}
+
+.goalDP,
+.goalRateDP,
+.goalWeightDP,
+.dietTypeDP,
+.currentWeightDP,
+.heightDP,
+.waistDP,
+.jobDP,
+.activityDP {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 2rem);
+    border: 0.1rem solid darkgray;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+}
+
+.goalRateDP,
+.goalWeightDP,
+.heightDP {
+    border-radius: 0;
+}
+
+.goalDP,
+.currentWeightDP,
+.jobDP {
+    border-radius: 1rem 1rem 0 0;
+}
+
+.dietTypeDP,
+.waistDP,
+.activityDP {
+    border-radius: 0 0 1rem 1rem;
+}
+#heyUser {
+    margin: 2rem 2rem -1rem 2rem;
+    font-weight: 700;
+}
+
+.h2DP {
+    margin: 1rem 2rem 1rem 2rem;
+}
+
+.h3DP {
+    margin-bottom: 0.5rem;
+}
+
+#createGoalBtn,
+.goBackBtn {
+    margin: 2rem 2rem 1rem 2rem;
+}
+
+.goBackBtn {
+    color: darkgray;
+    margin: 0rem 2rem 2rem 2rem;
+}
+
+.submitBtn {
+    display: flex;
+    flex-direction: column;
+}
