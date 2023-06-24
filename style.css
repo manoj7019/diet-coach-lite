@@ -8,10 +8,44 @@ body {
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
-    align-items: flex-start;
+    /* align-items: flex-start; */
     /* background-color: black; */
     /* color: white; */
 }
+
+/* welcome page */
+
+.welcomeInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 90vh;
+    margin: 2rem;
+}
+
+.welcomeHead {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    /* justify-content: center; */
+}
+
+#welcomePara {
+    margin: 1rem 0 0 0;
+}
+
+.welcomeBtns {
+    display: flex;
+    flex-direction: column;
+}
+
+.getStartedBtn,
+.loginBtn {
+    text-decoration: none;
+    margin-bottom: 1rem;
+}
+
+/* user Info page */
 
 .userInfo {
     display: flex;
@@ -81,13 +115,13 @@ input[type=password] {
     justify-content: space-between;
 } */
 
-/* dashBoardPage */
+/* display Input Page */
 
 .yourGoalDP,
 .yourMetricsDP,
 .yourLifestyleDP {
     margin: 1rem 2rem;
-    width: 100%;
+    width: 90%;
 }
 
 .goalDP,
@@ -101,7 +135,7 @@ input[type=password] {
 .activityDP {
     display: flex;
     justify-content: space-between;
-    width: calc(100% - 2rem);
+    width: 90%;
     border: 0.1rem solid darkgray;
     padding: 0.5rem 1rem;
     border-radius: 1rem;
@@ -150,4 +184,60 @@ input[type=password] {
 .submitBtn {
     display: flex;
     flex-direction: column;
+}
+
+/* display Goal Page */
+
+.goalCreatedPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 90vh;
+    margin: 2rem;
+}
+
+.goalCreatedGP {
+    margin: 2rem 0;
+    display: flex;
+    width: 100%;
+}
+
+.calGP,
+.proteinGP,
+.carbsGP,
+.fatGP {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 0.1rem solid darkgray;
+    padding: 0.5rem 0.7rem;
+    border-radius: 1rem;
+    width: 25%;
+}
+
+.calGP {
+    border-radius: 1rem 0 0 1rem;
+}
+
+.proteinGP,
+.carbsGP {
+    border-radius: 0;
+}
+
+.fatGP {
+    border-radius: 0 1rem 1rem 0;
+}
+
+.calG,
+.proteinG,
+.carbsG,
+.fatG {
+    font-size: 2rem;
+}
+
+.small {
+    font-size: 0.6rem;
+    font-weight: 600;
 }

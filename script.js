@@ -54,16 +54,16 @@ function getDetails() {
     console.log(email);
     let password = localStorage.getItem('passwords');
     console.log(password);
-    let currentWeight = localStorage.getItem('currentWeights');
+    let currentWeight = parseInt(localStorage.getItem('currentWeights'));
     currentWeightD.textContent = `${currentWeight} kg`;
     console.log(currentWeight);
-    let goalWeight = localStorage.getItem('goalWeights');
+    let goalWeight = parseInt(localStorage.getItem('goalWeights'));
     goalWeightD.textContent = `${goalWeight} kg`;
     console.log(goalWeight);
-    let height = localStorage.getItem('heights');
+    let height = parseInt(localStorage.getItem('heights'));
     heightD.textContent = `${height} cm`;
     console.log(height);
-    let waist = localStorage.getItem('waists');
+    let waist = parseInt(localStorage.getItem('waists'));
     console.log(waist);
     waistD.textContent = `${waist} inches`;
     /* let balanced = localStorage.getItem('balanceds');
@@ -114,11 +114,15 @@ function getMySex() {
 const dOB = document.querySelector('#dOB');
 function setMyDOB() {
     let userDOB = document.getElementById('userDOB').value;
-    localStorage.setItem('userDOBs', userDOB);
+    let dateObj = new Date(userDOB);
+    let year = dateObj.getFullYear();
+    localStorage.setItem('userDOBs', year);
 }
 function getMyDOB() {
     let userDOB = localStorage.getItem('userDOBs');
-    console.log(userDOB);
+    let nowYear = new Date().getFullYear();
+    let userAge = nowYear - userDOB;
+    console.log(userAge);
 } 
 
 // set-get Job
