@@ -9,8 +9,6 @@
 <body>
     <div class="userInfo">
         <div class="head">
-            <h1>Welcome to diet coach</h1>
-            <p>All you need is brutal bone-crushing, soul-sucking and gut-wrenching consistency.</p>
             <h2>Let me know about you..</h2>
         </div>
         
@@ -86,7 +84,7 @@
             <label for="warehouseJob">Warehouse Job</label>
         </div>
         <div class="fieldJob">
-            <input id="fieldJob" type="radio" value="FieldJob" name="job" onclick="setMyJob(this.value)">
+            <input id="fieldJob" type="radio" value="Field Job" name="job" onclick="setMyJob(this.value)">
             <label for="fieldJob">Field Job</label>
         </div>
         <p id="job"></p>
@@ -115,7 +113,7 @@
 
     <div class="userGoalRange">
         <h3>How fast you want to achieve your goal?</h3>
-        <input id="goalRange" name="range" type="range" min="10" max="100" value="35" oninput="myFunction(this.value)">
+        <input id="goalRange" name="range" type="range" min="10" max="100" value="35" oninput="myFunction(this.value); setMyRange(this.value);">
         <p id="outputG"></p>
         <p id="outputGM"></p>
     </div>
@@ -138,7 +136,7 @@
     </div>
 
     <div class="sumbitBtn">
-        <input id="submitBtn" type="submit" value="Create your goal" onclick="submitForm(); setDetails(); setMyDOB();" disabled>
+        <input id="submitBtn" type="submit" value="So, what's next?" onclick="submitForm(); setDetails(); setMyDOB();" disabled>
     </div>
     </form>
     </div>

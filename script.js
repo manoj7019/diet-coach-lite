@@ -3,26 +3,26 @@ function submitForm() {
     document.getElementById('submitForm').submit();
 }
 
-const goalWeightD = document.querySelector('#goalWeightD');
-const currentWeightD = document.querySelector('#currentWeightD');
-const heightD = document.querySelector('#heightD');
-const waistD = document.querySelector('#waistD');
-const heyUser = document.querySelector('#heyUser');
+const goalWeightD = document.querySelector('#goalWeightD') || {};
+const currentWeightD = document.querySelector('#currentWeightD') || {};
+const heightD = document.querySelector('#heightD') || {};
+const waistD = document.querySelector('#waistD') || {};
+const heyUser = document.querySelector('#heyUser') || {};
 
 function setDetails() {
-    let name = document.getElementById('userName').value;
+    let name = document.getElementById('userName').value || {};
     localStorage.setItem('names', name);
-    let email = document.getElementById('userEmail').value;
+    let email = document.getElementById('userEmail').value || {};
     localStorage.setItem('emails', email);
-    let password = document.getElementById('userPassword').value;
+    let password = document.getElementById('userPassword').value || {};
     localStorage.setItem('passwords', password);
-    let currentWeight = document.getElementById('currentWeight').value;
+    let currentWeight = document.getElementById('currentWeight').value || {};
     localStorage.setItem('currentWeights', currentWeight);
-    let goalWeight = document.getElementById('goalWeight').value;
+    let goalWeight = document.getElementById('goalWeight').value || {};
     localStorage.setItem('goalWeights', goalWeight);
-    let height = document.getElementById('height').value;
+    let height = document.getElementById('height').value || {};
     localStorage.setItem('heights', height);
-    let waist = document.getElementById('waist').value;
+    let waist = document.getElementById('waist').value || {};
     localStorage.setItem('waists', waist);
     /* let balanced = document.getElementById('balanced').value;
     localStorage.setItem('balanceds', balanced);
@@ -48,7 +48,7 @@ function setDetails() {
 
 function getDetails() {
     let name = localStorage.getItem('names');
-    heyUser.textContent = `Hey ${name},` || {};
+    heyUser.textContent = `Hey ${name},`;
     console.log(name);
     let email = localStorage.getItem('emails');
     console.log(email);
@@ -89,7 +89,9 @@ function getDetails() {
 }
 // set-get Goal 
 
-const goalD = document.querySelector('#goalD');
+const goalD = document.querySelector('#goalD') || {};
+const userGoalGP = document.querySelector('#userGoalGP') || {};
+
 function setMyGoal(goal) {
     document.getElementById('goal').value = goal;
     localStorage.setItem('userGoals', goal);
@@ -97,6 +99,7 @@ function setMyGoal(goal) {
 function getMyGoal() {
     let userGoal = localStorage.getItem('userGoals');
     goalD.textContent = `${userGoal}`;
+    userGoalGP.textContent = `${userGoal}`;
     console.log(userGoal);
 }
 
@@ -126,7 +129,7 @@ function getMyDOB() {
 } 
 
 // set-get Job
-const jobD = document.querySelector('#jobD');
+const jobD = document.querySelector('#jobD') || {};
 function setMyJob(job) {
     document.getElementById('job').value = job;
     localStorage.setItem('userJobs', job);
@@ -138,7 +141,7 @@ function getMyJob() {
 }
 
 // set-get Activity
-const activityD = document.querySelector('#activityD');
+const activityD = document.querySelector('#activityD') || {};
 function setMyActivity(activity) {
     document.getElementById('activity').value = activity;
     localStorage.setItem('userActivitys', activity);
@@ -150,7 +153,7 @@ function getMyActivity() {
 }
 
 // set-get Diet
-const dietTypeD = document.querySelector('#dietTypeD');
+const dietTypeD = document.querySelector('#dietTypeD') || {};
 function setMyDiet(diet) {
     document.getElementById('diet').value = diet;
     localStorage.setItem('userDiets', diet);
@@ -161,15 +164,12 @@ function getMyDiet() {
     console.log(userDiet);
 }
 
-// goal-rate 
-
 // slider-userGoalRange
 const goalRange = document.getElementById('goalRange') || {};
 const outputG = document.querySelector('#outputG') || {};
 const outputGM = document.querySelector('#outputGM') || {};
-outputG.textContent = `0.35 kg/week (recommended)`;
-outputGM.textContent = `1.4 kg/month`;
-const goalRateD = document.querySelector('#goalRateD');
+// outputG.textContent = `0.35 kg/week (recommended)`;
+// outputGM.textContent = `1.4 kg/month`;
 
 function myFunction(value) {
     if(value/100 <= 0.24) {
@@ -184,6 +184,18 @@ function myFunction(value) {
     }
 }
 
+const goalRateD = document.querySelector('#goalRateD');
+function setMyRange(range) {
+    document.getElementById('goalRange').value = range;
+    localStorage.setItem('userRanges', range);
+}
+function getMyRange() {
+    let userRange = localStorage.getItem('userRanges');
+    console.log(userRange/100);
+    goalRateD.textContent = `${userRange/100} kg/week`;
+}
+
+//  checkIfFormIsFilled
 
 function checkForm() {
     let inputs = document.getElementsByClassName('inputs');
@@ -213,6 +225,223 @@ function checkForm() {
     });
     btn.disabled = ((!isValid) && (!isGSelected)); */
     btn.disabled = (!isValid);
+}
+
+// Calculate Calories required per day
+
+const calG = document.querySelector('#calG') || {};
+const proteinG = document.querySelector('#proteinG') || {};
+function calcCalories() {
+    let valueBMR;
+    let valueTDEE;
+    let dailyCals;
+    let valueCals;
+    let valueProtein;
+    let userSex = localStorage.getItem('userSexs');
+    let currentWeight = parseInt(localStorage.getItem('currentWeights'));
+    let height = parseInt(localStorage.getItem('heights'));
+    let userDOB = localStorage.getItem('userDOBs');
+    let nowYear = new Date().getFullYear();
+    let userAge = nowYear - userDOB;
+    let userJob = localStorage.getItem('userJobs');
+    let userGoal = localStorage.getItem('userGoals');
+    let userRange = localStorage.getItem('userRanges');
+
+    if(userSex == 'Male') {
+        valueBMR = 88.362 + (13.397 * currentWeight) + (4.799 * height) - (5.677 * userAge);
+        console.log(valueBMR);
+        if (userJob == 'Desk Job') {
+            valueTDEE = valueBMR * 1.2;
+            console.log(valueTDEE);
+            if(userGoal == 'Lose Weight') {
+                dailyCals = userRange * (1/100) * (1/7) * 7700;
+                valueCals = valueTDEE - dailyCals;
+                console.log(valueCals);
+                calG.textContent = `${Math.floor(valueCals)}`;
+                valueProtein = currentWeight * 1.5;
+                console.log(valueProtein);
+                proteinG.textContent = `${Math.floor(valueProtein)}`;
+            } else if (userGoal == 'Maintain Weight') {
+                dailyCals = userRange * (1/100) * (1/7) * 7700;
+                valueCals = valueTDEE;
+                console.log(valueCals);
+                calG.textContent = `${Math.floor(valueCals)}`;
+                valueProtein = currentWeight * 1.75;
+                console.log(valueProtein);
+                proteinG.textContent = `${Math.floor(valueProtein)}`;
+            } else if (userGoal == 'Gain Weight') {
+                dailyCals = userRange * (1/100) * (1/7) * 7700;
+                valueCals = valueTDEE + dailyCals;
+                console.log(valueCals);
+                calG.textContent = `${Math.floor(valueCals)}`;
+                valueProtein = currentWeight * 2.0;
+                console.log(valueProtein);
+                proteinG.textContent = `${Math.floor(valueProtein)}`;
+            } else {
+                console.log(valueCals);
+            }
+        } else if (userJob == 'Warehouse Job') {
+            valueTDEE = valueBMR * 1.375;
+            console.log(valueTDEE);
+            if(userGoal == 'Lose Weight') {
+                dailyCals = userRange * (1/100) * (1/7) * 7700;
+                valueCals = valueTDEE - dailyCals;
+                console.log(valueCals);
+                calG.textContent = `${Math.floor(valueCals)}`;
+                valueProtein = currentWeight * 1.5;
+                console.log(valueProtein);
+                proteinG.textContent = `${Math.floor(valueProtein)}`;
+            } else if (userGoal == 'Maintain Weight') {
+                dailyCals = userRange * (1/100) * (1/7) * 7700;
+                valueCals = valueTDEE;
+                console.log(valueCals);
+                calG.textContent = `${Math.floor(valueCals)}`;
+                valueProtein = currentWeight * 1.75;
+                console.log(valueProtein);
+                proteinG.textContent = `${Math.floor(valueProtein)}`;
+            } else if (userGoal == 'Gain Weight') {
+                dailyCals = userRange * (1/100) * (1/7) * 7700;
+                valueCals = valueTDEE + dailyCals;
+                console.log(valueCals);
+                calG.textContent = `${Math.floor(valueCals)}`;
+                valueProtein = currentWeight * 2.0;
+                console.log(valueProtein);
+                proteinG.textContent = `${Math.floor(valueProtein)}`;
+            } else {
+                console.log(valueCals);
+            }
+        } else if (userJob == 'Field Job') {
+            valueTDEE = valueBMR * 1.6;
+            console.log(valueTDEE);
+            if(userGoal == 'Lose Weight') {
+                dailyCals = userRange * (1/100) * (1/7) * 7700;
+                valueCals = valueTDEE - dailyCals;
+                console.log(valueCals);
+                calG.textContent = `${Math.floor(valueCals)}`;
+                valueProtein = currentWeight * 1.5;
+                console.log(valueProtein);
+                proteinG.textContent = `${Math.floor(valueProtein)}`;
+            } else if (userGoal == 'Maintain Weight') {
+                dailyCals = userRange * (1/100) * (1/7) * 7700;
+                valueCals = valueTDEE;
+                console.log(valueCals);
+                calG.textContent = `${Math.floor(valueCals)}`;
+                valueProtein = currentWeight * 1.75;
+                console.log(valueProtein);
+                proteinG.textContent = `${Math.floor(valueProtein)}`;
+            } else if (userGoal == 'Gain Weight') {
+                dailyCals = userRange * (1/100) * (1/7) * 7700;
+                valueCals = valueTDEE + dailyCals;
+                console.log(valueCals);
+                calG.textContent = `${Math.floor(valueCals)}`;
+                valueProtein = currentWeight * 2.0;
+                console.log(valueProtein);
+                proteinG.textContent = `${Math.floor(valueProtein)}`;
+            } else {
+                console.log(valueCals);
+            }
+        } else {
+            alert(`Please go select your job`);
+        }
+    } else if (userSex == 'Female') {
+        valueBMR = 447.593 + (9.247 * currentWeight) + (3.098 * height) - (4.330 * userAge);
+        console.log(valueBMR);
+        if (userJob == 'Desk Job') {
+            valueTDEE = valueBMR * 1.2;
+            console.log(valueTDEE);
+            if(userGoal == 'Lose Weight') {
+                dailyCals = userRange * (1/100) * (1/7) * 7700;
+                valueCals = valueTDEE - dailyCals;
+                console.log(valueCals);
+                calG.textContent = `${Math.floor(valueCals)}`;
+                valueProtein = currentWeight * 1.5;
+                console.log(valueProtein);
+                proteinG.textContent = `${Math.floor(valueProtein)}`;
+            } else if (userGoal == 'Maintain Weight') {
+                dailyCals = userRange * (1/100) * (1/7) * 7700;
+                valueCals = valueTDEE;
+                console.log(valueCals);
+                calG.textContent = `${Math.floor(valueCals)}`;
+                valueProtein = currentWeight * 1.75;
+                console.log(valueProtein);
+                proteinG.textContent = `${Math.floor(valueProtein)}`;
+            } else if (userGoal == 'Gain Weight') {
+                dailyCals = userRange * (1/100) * (1/7) * 7700;
+                valueCals = valueTDEE + dailyCals;
+                console.log(valueCals);
+                calG.textContent = `${Math.floor(valueCals)}`;
+                valueProtein = currentWeight * 2.0;
+                console.log(valueProtein);
+                proteinG.textContent = `${Math.floor(valueProtein)}`;
+            } else {
+                console.log(valueCals);
+            }
+        } else if (userJob == 'Warehouse Job') {
+            valueTDEE = valueBMR * 1.375;
+            console.log(valueTDEE);
+            if(userGoal == 'Lose Weight') {
+                dailyCals = userRange * (1/100) * (1/7) * 7700;
+                valueCals = valueTDEE - dailyCals;
+                console.log(valueCals);
+                calG.textContent = `${Math.floor(valueCals)}`;
+                valueProtein = currentWeight * 1.5;
+                console.log(valueProtein);
+                proteinG.textContent = `${Math.floor(valueProtein)}`;
+            } else if (userGoal == 'Maintain Weight') {
+                dailyCals = userRange * (1/100) * (1/7) * 7700;
+                valueCals = valueTDEE;
+                console.log(valueCals);
+                calG.textContent = `${Math.floor(valueCals)}`;
+                valueProtein = currentWeight * 1.75;
+                console.log(valueProtein);
+                proteinG.textContent = `${Math.floor(valueProtein)}`;
+            } else if (userGoal == 'Gain Weight') {
+                dailyCals = userRange * (1/100) * (1/7) * 7700;
+                valueCals = valueTDEE + dailyCals;
+                console.log(valueCals);
+                calG.textContent = `${Math.floor(valueCals)}`;
+                valueProtein = currentWeight * 2.0;
+                console.log(valueProtein);
+                proteinG.textContent = `${Math.floor(valueProtein)}`;
+            } else {
+                console.log(valueCals);
+            }
+        } else if (userJob == 'Field Job') {
+            valueTDEE = valueBMR * 1.6;
+            console.log(valueTDEE);
+            if(userGoal == 'Lose Weight') {
+                dailyCals = userRange * (1/100) * (1/7) * 7700;
+                valueCals = valueTDEE - dailyCals;
+                console.log(valueCals);
+                calG.textContent = `${Math.floor(valueCals)}`;
+                valueProtein = currentWeight * 1.5;
+                console.log(valueProtein);
+                proteinG.textContent = `${Math.floor(valueProtein)}`;
+            } else if (userGoal == 'Maintain Weight') {
+                dailyCals = userRange * (1/100) * (1/7) * 7700;
+                valueCals = valueTDEE;
+                console.log(valueCals);
+                calG.textContent = `${Math.floor(valueCals)}`;
+                valueProtein = currentWeight * 1.75;
+                console.log(valueProtein);
+                proteinG.textContent = `${Math.floor(valueProtein)}`;
+            } else if (userGoal == 'Gain Weight') {
+                dailyCals = userRange * (1/100) * (1/7) * 7700;
+                valueCals = valueTDEE + dailyCals;
+                console.log(valueCals);
+                calG.textContent = `${Math.floor(valueCals)}`;
+                valueProtein = currentWeight * 2.0;
+                console.log(valueProtein);
+                proteinG.textContent = `${Math.floor(valueProtein)}`;
+            } else {
+                console.log(valueCals);
+            }
+        } else {
+            alert(`Please go select your job`);
+        }
+    } else {
+        alert(`Please go fill all the details`);
+    }
 }
 
 

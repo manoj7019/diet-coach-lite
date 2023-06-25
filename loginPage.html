@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="userInfo">
+        <div class="head">
+            <h2>Complete today's check-in</h2>
+        </div>
+        
+    <form id="submitForm" method="get" action="">
+    <div class="name">
+        <div class="userEmail">
+            <label for="userEmail">Email</label>
+            <input type="email" id="userEmail" class="inputs" placeholder=" your email" onkeyup="checkForm()"/>
+        </div>
+        <div class="userPassword">
+            <label for="userPassword">Password</label>
+            <input type="password" id="userPassword" class="inputs" placeholder=" password" onkeyup="checkForm()"/>
+        </div>
+    </div>
+
+
+    <div class="userMetrics">
+        <h3>What's your weight today?</h3>
+        <input class="inputs" id="currentWeight" type="text" placeholder=" Current weight (Kg)" onkeyup="checkForm()">
+    </div>
+
+    <div class="sumbitBtn">
+        <input id="submitBtn" type="submit" value="Check in" onclick="submitForm(); getDetails();" disabled>
+    </div>
+    </form>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
