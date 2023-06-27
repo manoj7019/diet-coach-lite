@@ -10,6 +10,7 @@ body {
     flex-direction: column;
     font-family: 'Inter', sans-serif;
     font-weight: 500;
+    overscroll-behavior: none;
     /* align-items: flex-start; */
     /* background-color: black; */
     /* color: white; */
@@ -143,6 +144,20 @@ input[type=password] {
     border-radius: 1rem;
 }
 
+#goalD,
+#goalRateD,
+#goalWeightD,
+#dietTypeD,
+#currentWeightD,
+#heightD,
+#waistD,
+#jobD,
+#activityD {
+    font-weight: 600;
+}
+
+
+
 .goalRateDP,
 .goalWeightDP,
 .heightDP {
@@ -190,6 +205,11 @@ input[type=password] {
 
 /* display Goal Page */
 
+#goalImageGP {
+    width: 40%;
+    margin-bottom: 1rem;
+}
+
 .goalCreatedPage {
     display: flex;
     flex-direction: column;
@@ -219,6 +239,13 @@ input[type=password] {
     width: 25%;
 }
 
+#calG,
+#proteinG,
+#carbsG,
+#fatG {
+    font-weight: 700;
+}
+
 .calGP {
     border-radius: 1rem 0 0 1rem;
 }
@@ -242,4 +269,155 @@ input[type=password] {
 .small {
     font-size: 0.6rem;
     font-weight: 600;
+}
+
+ /* bottom buttons */
+
+.dashBoardPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 90vh;
+    max-height: 100vh;
+}
+
+.topHead {
+    position: sticky;
+    position: -webkit-sticky;
+    background-color: white;
+    /* border-bottom: 0.1rem solid lightgray; */
+    top: 0;
+}
+
+.topHeadText {
+    padding : 1rem;
+    font-size: 1rem;
+}
+
+.macrosHeadlineDBP {
+    margin: 1rem;
+}
+
+.macrosDBP {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    width: calc(100% - 1rem);
+    /* background-color: rgba(211, 211, 211, 0.334); */
+    /* border: 0.1rem solid lightgrey; */
+}
+
+.calDB {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    border: 0.3rem solid black;
+    padding: 2.4rem;
+    border-radius: 1rem;
+    width: 40%;
+    text-align: center;
+    /* background-color: rgba(211, 211, 211, 0.334); */
+}
+
+.proteinFatDB,
+.carbsFiberDB {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30%;
+}
+
+.proteinDB,
+.fatDB,
+.carbsDB,
+.fiberDB {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.1rem solid lightgray;
+    padding: 0.8rem;
+    border-radius: 1rem 0 0 0;
+    background-color:aliceblue;
+}
+
+.proteinDB {
+    border-right: none;
+}
+
+.fatDB {
+    border-radius: 0 0 0 1rem;
+    border-right: none;
+}
+
+.carbsDB {
+    border-radius: 0 1rem 0 0;
+    border-left: none;
+}
+
+.fiberDB {
+    border-radius: 0 0 1rem 0;
+    border-left: none;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+/* Today's exercise part */
+.exerciseDBP {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background-color: aliceblue;
+}
+
+.exerciseHeadlineDBP {
+    margin-bottom: 1rem;
+}
+
+.exerciseAndTime {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#exerciseSelect {
+    height: 1.5rem;
+}
+
+.exerciseTimeDBP {
+    display: flex;
+    align-items: center;
+}
+
+#exerciseTimeDBP {
+    height: 1.5rem;
+    width: 5rem;
+    margin-left: 0.5rem;
+}
+
+
+.bottomBtns {
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    position: -webkit-sticky;
+    background-color: white;
+    bottom: 0;
+    padding : 1rem;
+    /* border-top: 0.1rem solid lightgrey; */
+    /* width: 90vw; */
+    /* margin: 1rem 0; */
+    /* z-index: 1; */
+}
+
+.bottomBtn {
+    height: 1.5rem;
+    /* margin: 1rem 0 1rem 0; */
 }

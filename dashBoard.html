@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body onload="getMyGoal(); getMySex(); getMyJob(); getMyActivity(); getMyDiet(); getMyDOB(); calcCalories();">
+
+    <div class="dashBoardPage">
+        <div class="topHead">
+            <p class="topHeadText">Page name</p>
+        </div>
+        
+        <h2 class="h2DBP">Dashboard</h2>
+        
+        <div class="macrosPartDBP">
+            <div class="macrosHeadlineDBP">
+                <h3>Today's targets</h3>
+            </div>
+            <div class="macrosDBP">
+                <div class="proteinFatDB">
+                    <div class="proteinDB">
+                        <p id="proteinDB">000/000</p>
+                        <p class="small">Protein(g)</p>
+                    </div>
+                    <div class="fatDB">
+                        <p id="fatDB">000/000</p>
+                        <p class="small">Fat(g)</p>
+                    </div>
+                </div>
+                <div class="calDB">
+                    <p id="calDB">0000/0000</p>
+                    <p>Cal</p>
+                </div>
+                <div class="carbsFiberDB">
+                    <div class="carbsDB">
+                        <p id="carbsDB">000/000</p>
+                        <p class="small">Carbs(g)</p>
+                    </div>
+                    <div class="fiberDB">
+                        <p id="fiberDB">000/000</p>
+                        <p class="small">Fiber(g)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="progressPartDBP">
+            <div class="progressHeadline">
+                <h3>Your progress</h3>
+            </div>
+            <div class="progressDBP">
+                <p>Your Progress graph</p>
+                <p id="progressGraph"></p>
+            </div>
+        </div>
+
+        <div class="consistencyPartDBP">
+            <div class="consistencyHeadline">
+                <h3>Your progress</h3>
+            </div>
+            <div class="consistencyDBP">
+                <p>Your Progress graph</p>
+                <p id="consistencyGraph"></p>
+            </div>
+        </div>
+
+        <div class="exerciseDBP">
+            <div class="exerciseHeadlineDBP">
+                <h3>What exercise you did today?</h3>
+            </div>
+            <div class="exerciseAndTime">
+                <div class="exerciseTypeDBP">
+                    <select name="exerciseSelect" id="exerciseSelect">
+                        <option value="0">Choose exercise</option>
+                        <option value="W">Walking</option>
+                        <option value="WT">Weight training</option>
+                        <option value="WJ">Walk + Jog</option>
+                        <option value="R">Running</option>
+                        <option value="JR">Jump rope</option>
+                        <option value="C">Cycling</option>
+                        <option value="S">Swimming</option>
+                    </select>
+                </div>
+                <div class="exerciseTimeDBP">
+                    <label for="exerciseTimeDBP">Duration :</label>
+                    <input id="exerciseTimeDBP" type="text" name="exerciseTime" placeholder=" in mins" size="20">
+                </div>
+            </div>
+        </div>
+
+        <div class="exerciseDBP">
+            <div class="exerciseHeadlineDBP">
+                <h3>What exercise you did today?</h3>
+            </div>
+            <div class="exerciseAndTime">
+                <div class="exerciseTypeDBP">
+                    <select name="exerciseSelect" id="exerciseSelect">
+                        <option value="0">Choose exercise</option>
+                        <option value="W">Walking</option>
+                        <option value="WT">Weight training</option>
+                        <option value="WJ">Walk + Jog</option>
+                        <option value="R">Running</option>
+                        <option value="JR">Jump rope</option>
+                        <option value="C">Cycling</option>
+                        <option value="S">Swimming</option>
+                    </select>
+                </div>
+                <div class="exerciseTimeDBP">
+                    <label for="exerciseTimeDBP">Duration :</label>
+                    <input id="exerciseTimeDBP" type="text" name="exerciseTime" placeholder=" in mins" size="20">
+                </div>
+            </div>
+        </div>
+
+        <div class="exerciseDBP">
+            <div class="exerciseHeadlineDBP">
+                <h3>What exercise you did today?</h3>
+            </div>
+            <div class="exerciseAndTime">
+                <div class="exerciseTypeDBP">
+                    <select name="exerciseSelect" id="exerciseSelect">
+                        <option value="0">Choose exercise</option>
+                        <option value="W">Walking</option>
+                        <option value="WT">Weight training</option>
+                        <option value="WJ">Walk + Jog</option>
+                        <option value="R">Running</option>
+                        <option value="JR">Jump rope</option>
+                        <option value="C">Cycling</option>
+                        <option value="S">Swimming</option>
+                    </select>
+                </div>
+                <div class="exerciseTimeDBP">
+                    <label for="exerciseTimeDBP">Duration :</label>
+                    <input id="exerciseTimeDBP" type="text" name="exerciseTime" placeholder=" in mins" size="20">
+                </div>
+            </div>
+        </div>
+
+        <div class="exerciseDBP">
+            <div class="exerciseHeadlineDBP">
+                <h3>What exercise you did today?</h3>
+            </div>
+            <div class="exerciseAndTime">
+                <div class="exerciseTypeDBP">
+                    <select name="exerciseSelect" id="exerciseSelect">
+                        <option value="0">Choose exercise</option>
+                        <option value="W">Walking</option>
+                        <option value="WT">Weight training</option>
+                        <option value="WJ">Walk + Jog</option>
+                        <option value="R">Running</option>
+                        <option value="JR">Jump rope</option>
+                        <option value="C">Cycling</option>
+                        <option value="S">Swimming</option>
+                    </select>
+                </div>
+                <div class="exerciseTimeDBP">
+                    <label for="exerciseTimeDBP">Duration :</label>
+                    <input id="exerciseTimeDBP" type="text" name="exerciseTime" placeholder=" in mins" size="20">
+                </div>
+            </div>
+        </div>
+
+        <div class="exerciseDBP">
+            <div class="exerciseHeadlineDBP">
+                <h3>What exercise you did today?</h3>
+            </div>
+            <div class="exerciseAndTime">
+                <div class="exerciseTypeDBP">
+                    <select name="exerciseSelect" id="exerciseSelect">
+                        <option value="0">Choose exercise</option>
+                        <option value="W">Walking</option>
+                        <option value="WT">Weight training</option>
+                        <option value="WJ">Walk + Jog</option>
+                        <option value="R">Running</option>
+                        <option value="JR">Jump rope</option>
+                        <option value="C">Cycling</option>
+                        <option value="S">Swimming</option>
+                    </select>
+                </div>
+                <div class="exerciseTimeDBP">
+                    <label for="exerciseTimeDBP">Duration :</label>
+                    <input id="exerciseTimeDBP" type="text" name="exerciseTime" placeholder=" in mins" size="20">
+                </div>
+            </div>
+        </div>
+
+        <div class="exerciseDBP">
+            <div class="exerciseHeadlineDBP">
+                <h3>What exercise you did today?</h3>
+            </div>
+            <div class="exerciseAndTime">
+                <div class="exerciseTypeDBP">
+                    <select name="exerciseSelect" id="exerciseSelect">
+                        <option value="0">Choose exercise</option>
+                        <option value="W">Walking</option>
+                        <option value="WT">Weight training</option>
+                        <option value="WJ">Walk + Jog</option>
+                        <option value="R">Running</option>
+                        <option value="JR">Jump rope</option>
+                        <option value="C">Cycling</option>
+                        <option value="S">Swimming</option>
+                    </select>
+                </div>
+                <div class="exerciseTimeDBP">
+                    <label for="exerciseTimeDBP">Duration :</label>
+                    <input id="exerciseTimeDBP" type="text" name="exerciseTime" placeholder=" in mins" size="20">
+                </div>
+            </div>
+        </div>
+
+        <div class="exerciseDBP">
+            <div class="exerciseHeadlineDBP">
+                <h3>What exercise you did today?</h3>
+            </div>
+            <div class="exerciseAndTime">
+                <div class="exerciseTypeDBP">
+                    <select name="exerciseSelect" id="exerciseSelect">
+                        <option value="0">Choose exercise</option>
+                        <option value="W">Walking</option>
+                        <option value="WT">Weight training</option>
+                        <option value="WJ">Walk + Jog</option>
+                        <option value="R">Running</option>
+                        <option value="JR">Jump rope</option>
+                        <option value="C">Cycling</option>
+                        <option value="S">Swimming</option>
+                    </select>
+                </div>
+                <div class="exerciseTimeDBP">
+                    <label for="exerciseTimeDBP">Duration :</label>
+                    <input id="exerciseTimeDBP" type="text" name="exerciseTime" placeholder=" in mins" size="20">
+                </div>
+            </div>
+        </div>
+
+        <div class="bottomBtns">
+            <a href="">
+                <img class="bottomBtn" src="./images/dashboard (2).png">
+            </a>
+            <a href="">
+                <img class="bottomBtn" src="./images/food.png">
+            </a>
+            <a href="">
+                <img class="bottomBtn" src="./images/add.png">
+            </a>
+            <a href="">
+                <img class="bottomBtn" src="./images/goal.png">
+            </a>
+            <a href="">
+                <img class="bottomBtn" src="./images/more.png">
+            </a>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
