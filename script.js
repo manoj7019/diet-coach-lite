@@ -233,6 +233,12 @@ const calG = document.querySelector('#calG') || {};
 const proteinG = document.querySelector('#proteinG') || {};
 const carbsG = document.querySelector('#carbsG') || {};
 const fatG = document.querySelector('#fatG') || {};
+const calDB = document.querySelector('#calDB') || {};
+const proteinDB = document.querySelector('#proteinDB') || {};
+const carbsDB = document.querySelector('#carbsDB') || {};
+const fatDB = document.querySelector('#fatDB') || {};
+const fiberDB = document.querySelector('#fiberDB') || {};
+
 function calcCalories() {
     let valueBMR;
     let valueTDEE;
@@ -241,6 +247,7 @@ function calcCalories() {
     let valueProtein;
     let valueCarbs;
     let valueFat;
+    let valueFiber;
     let userSex = localStorage.getItem('userSexs');
     let currentWeight = parseInt(localStorage.getItem('currentWeights'));
     let height = parseInt(localStorage.getItem('heights'));
@@ -262,43 +269,65 @@ function calcCalories() {
                 valueCals = valueTDEE - dailyCals;
                 console.log(valueCals);
                 calG.textContent = `${Math.floor(valueCals)}`;
+                calDB.textContent = `${Math.floor(valueCals)}`;
                 valueProtein = valueCals * (0.35/4);
                 console.log(valueProtein);
                 proteinG.textContent = `${Math.floor(valueProtein)}`;
+                proteinDB.textContent = `${Math.floor(valueProtein)}`;
                 valueCarbs = valueCals * (0.45/4);
                 console.log(valueCarbs);
                 carbsG.textContent = `${Math.floor(valueCarbs)}`;
+                carbsDB.textContent = `${Math.floor(valueCarbs)}`;
                 valueFat = valueCals * (0.2/9);
                 console.log(valueFat);
                 fatG.textContent = `${Math.floor(valueFat)}`;
+                fatDB.textContent = `${Math.floor(valueFat)}`;
+                valueFiber = 38;
+                console.log(valueFiber);
+                fiberDB.textContent = `${valueFiber}`;
+
             } else if (userGoal == 'Maintain Weight') {
                 dailyCals = userRange * (1/100) * (1/7) * 7700;
                 valueCals = valueTDEE;
                 console.log(valueCals);
                 calG.textContent = `${Math.floor(valueCals)}`;
+                calDB.textContent = `${Math.floor(valueCals)}`;
                 valueProtein = valueCals * (0.3/4);
                 console.log(valueProtein);
                 proteinG.textContent = `${Math.floor(valueProtein)}`;
+                proteinDB.textContent = `${Math.floor(valueProtein)}`;
                 valueCarbs = valueCals * (0.4/4);
                 console.log(valueCarbs);
                 carbsG.textContent = `${Math.floor(valueCarbs)}`;
+                carbsDB.textContent = `${Math.floor(valueCarbs)}`;
                 valueFat = valueCals * (0.3/9);
                 console.log(valueFat);
                 fatG.textContent = `${Math.floor(valueFat)}`;
+                fatDB.textContent = `${Math.floor(valueFat)}`;
+                valueFiber = 38;
+                console.log(valueFiber);
+                fiberDB.textContent = `${valueFiber}`;
             } else if (userGoal == 'Gain Weight') {
                 dailyCals = userRange * (1/100) * (1/7) * 7700;
                 valueCals = valueTDEE + dailyCals;
                 console.log(valueCals);
                 calG.textContent = `${Math.floor(valueCals)}`;
+                calDB.textContent = `${Math.floor(valueCals)}`;
                 valueProtein = valueCals * (0.3/4);
                 console.log(valueProtein);
                 proteinG.textContent = `${Math.floor(valueProtein)}`;
+                proteinDB.textContent = `${Math.floor(valueProtein)}`;
                 valueCarbs = valueCals * (0.4/4);
                 console.log(valueCarbs);
                 carbsG.textContent = `${Math.floor(valueCarbs)}`;
+                carbsDB.textContent = `${Math.floor(valueCarbs)}`;
                 valueFat = valueCals * (0.3/9);
                 console.log(valueFat);
                 fatG.textContent = `${Math.floor(valueFat)}`;
+                fatDB.textContent = `${Math.floor(valueFat)}`;
+                valueFiber = 38;
+                console.log(valueFiber);
+                fiberDB.textContent = `${valueFiber}`;
             } else {
                 console.log(valueCals);
             }
@@ -310,43 +339,64 @@ function calcCalories() {
                 valueCals = valueTDEE - dailyCals;
                 console.log(valueCals);
                 calG.textContent = `${Math.floor(valueCals)}`;
+                calDB.textContent = `${Math.floor(valueCals)}`;
                 valueProtein = valueCals * (0.35/4);
                 console.log(valueProtein);
                 proteinG.textContent = `${Math.floor(valueProtein)}`;
+                proteinDB.textContent = `${Math.floor(valueProtein)}`;
                 valueCarbs = valueCals * (0.45/4);
                 console.log(valueCarbs);
                 carbsG.textContent = `${Math.floor(valueCarbs)}`;
+                carbsDB.textContent = `${Math.floor(valueCarbs)}`;
                 valueFat = valueCals * (0.2/9);
                 console.log(valueFat);
                 fatG.textContent = `${Math.floor(valueFat)}`;
+                fatDB.textContent = `${Math.floor(valueFat)}`;
+                valueFiber = 38;
+                console.log(valueFiber);
+                fiberDB.textContent = `${valueFiber}`;
             } else if (userGoal == 'Maintain Weight') {
                 dailyCals = userRange * (1/100) * (1/7) * 7700;
                 valueCals = valueTDEE;
                 console.log(valueCals);
                 calG.textContent = `${Math.floor(valueCals)}`;
+                calDB.textContent = `${Math.floor(valueCals)}`;
                 valueProtein = valueCals * (0.3/4);
                 console.log(valueProtein);
                 proteinG.textContent = `${Math.floor(valueProtein)}`;
+                proteinDB.textContent = `${Math.floor(valueProtein)}`;
                 valueCarbs = valueCals * (0.4/4);
                 console.log(valueCarbs);
                 carbsG.textContent = `${Math.floor(valueCarbs)}`;
+                carbsDB.textContent = `${Math.floor(valueCarbs)}`;
                 valueFat = valueCals * (0.3/9);
                 console.log(valueFat);
                 fatG.textContent = `${Math.floor(valueFat)}`;
+                fatDB.textContent = `${Math.floor(valueFat)}`;
+                valueFiber = 38;
+                console.log(valueFiber);
+                fiberDB.textContent = `${valueFiber}`;
             } else if (userGoal == 'Gain Weight') {
                 dailyCals = userRange * (1/100) * (1/7) * 7700;
                 valueCals = valueTDEE + dailyCals;
                 console.log(valueCals);
                 calG.textContent = `${Math.floor(valueCals)}`;
+                calDB.textContent = `${Math.floor(valueCals)}`;
                 valueProtein = valueCals * (0.3/4);
                 console.log(valueProtein);
                 proteinG.textContent = `${Math.floor(valueProtein)}`;
+                proteinDB.textContent = `${Math.floor(valueProtein)}`;
                 valueCarbs = valueCals * (0.4/4);
                 console.log(valueCarbs);
                 carbsG.textContent = `${Math.floor(valueCarbs)}`;
+                carbsDB.textContent = `${Math.floor(valueCarbs)}`;
                 valueFat = valueCals * (0.3/9);
                 console.log(valueFat);
                 fatG.textContent = `${Math.floor(valueFat)}`;
+                fatDB.textContent = `${Math.floor(valueFat)}`;
+                valueFiber = 38;
+                console.log(valueFiber);
+                fiberDB.textContent = `${valueFiber}`;
             } else {
                 console.log(valueCals);
             }
@@ -358,43 +408,64 @@ function calcCalories() {
                 valueCals = valueTDEE - dailyCals;
                 console.log(valueCals);
                 calG.textContent = `${Math.floor(valueCals)}`;
+                calDB.textContent = `${Math.floor(valueCals)}`;
                 valueProtein = valueCals * (0.35/4);
                 console.log(valueProtein);
                 proteinG.textContent = `${Math.floor(valueProtein)}`;
+                proteinDB.textContent = `${Math.floor(valueProtein)}`;
                 valueCarbs = valueCals * (0.45/4);
                 console.log(valueCarbs);
                 carbsG.textContent = `${Math.floor(valueCarbs)}`;
+                carbsDB.textContent = `${Math.floor(valueCarbs)}`;
                 valueFat = valueCals * (0.2/9);
                 console.log(valueFat);
                 fatG.textContent = `${Math.floor(valueFat)}`;
+                fatDB.textContent = `${Math.floor(valueFat)}`;
+                valueFiber = 38;
+                console.log(valueFiber);
+                fiberDB.textContent = `${valueFiber}`;
             } else if (userGoal == 'Maintain Weight') {
                 dailyCals = userRange * (1/100) * (1/7) * 7700;
                 valueCals = valueTDEE;
                 console.log(valueCals);
                 calG.textContent = `${Math.floor(valueCals)}`;
+                calDB.textContent = `${Math.floor(valueCals)}`;
                 valueProtein = valueCals * (0.3/4);
                 console.log(valueProtein);
                 proteinG.textContent = `${Math.floor(valueProtein)}`;
+                proteinDB.textContent = `${Math.floor(valueProtein)}`;
                 valueCarbs = valueCals * (0.4/4);
                 console.log(valueCarbs);
                 carbsG.textContent = `${Math.floor(valueCarbs)}`;
+                carbsDB.textContent = `${Math.floor(valueCarbs)}`;
                 valueFat = valueCals * (0.3/9);
                 console.log(valueFat);
                 fatG.textContent = `${Math.floor(valueFat)}`;
+                fatDB.textContent = `${Math.floor(valueFat)}`;
+                valueFiber = 38;
+                console.log(valueFiber);
+                fiberDB.textContent = `${valueFiber}`;
             } else if (userGoal == 'Gain Weight') {
                 dailyCals = userRange * (1/100) * (1/7) * 7700;
                 valueCals = valueTDEE + dailyCals;
                 console.log(valueCals);
                 calG.textContent = `${Math.floor(valueCals)}`;
+                calDB.textContent = `${Math.floor(valueCals)}`;
                 valueProtein = valueCals * (0.3/4);
                 console.log(valueProtein);
                 proteinG.textContent = `${Math.floor(valueProtein)}`;
+                proteinDB.textContent = `${Math.floor(valueProtein)}`;
                 valueCarbs = valueCals * (0.4/4);
                 console.log(valueCarbs);
                 carbsG.textContent = `${Math.floor(valueCarbs)}`;
+                carbsDB.textContent = `${Math.floor(valueCarbs)}`;
                 valueFat = valueCals * (0.3/9);
                 console.log(valueFat);
                 fatG.textContent = `${Math.floor(valueFat)}`;
+                fatDB.textContent = `${Math.floor(valueFat)}`;
+                valueFiber = 38;
+                console.log(valueFiber);
+                fiberDB.textContent = `${valueFiber}`;
             } else {
                 console.log(valueCals);
             }
@@ -412,43 +483,64 @@ function calcCalories() {
                 valueCals = valueTDEE - dailyCals;
                 console.log(valueCals);
                 calG.textContent = `${Math.floor(valueCals)}`;
+                calDB.textContent = `${Math.floor(valueCals)}`;
                 valueProtein = valueCals * (0.35/4);
                 console.log(valueProtein);
                 proteinG.textContent = `${Math.floor(valueProtein)}`;
+                proteinDB.textContent = `${Math.floor(valueProtein)}`;
                 valueCarbs = valueCals * (0.45/4);
                 console.log(valueCarbs);
                 carbsG.textContent = `${Math.floor(valueCarbs)}`;
+                carbsDB.textContent = `${Math.floor(valueCarbs)}`;
                 valueFat = valueCals * (0.2/9);
                 console.log(valueFat);
                 fatG.textContent = `${Math.floor(valueFat)}`;
+                fatDB.textContent = `${Math.floor(valueFat)}`;
+                valueFiber = 25;
+                console.log(valueFiber);
+                fiberDB.textContent = `${valueFiber}`;
             } else if (userGoal == 'Maintain Weight') {
                 dailyCals = userRange * (1/100) * (1/7) * 7700;
                 valueCals = valueTDEE;
                 console.log(valueCals);
                 calG.textContent = `${Math.floor(valueCals)}`;
+                calDB.textContent = `${Math.floor(valueCals)}`;
                 valueProtein = valueCals * (0.3/4);
                 console.log(valueProtein);
                 proteinG.textContent = `${Math.floor(valueProtein)}`;
+                proteinDB.textContent = `${Math.floor(valueProtein)}`;
                 valueCarbs = valueCals * (0.4/4);
                 console.log(valueCarbs);
                 carbsG.textContent = `${Math.floor(valueCarbs)}`;
+                carbsDB.textContent = `${Math.floor(valueCarbs)}`;
                 valueFat = valueCals * (0.3/9);
                 console.log(valueFat);
                 fatG.textContent = `${Math.floor(valueFat)}`;
+                fatDB.textContent = `${Math.floor(valueFat)}`;
+                valueFiber = 25;
+                console.log(valueFiber);
+                fiberDB.textContent = `${valueFiber}`;
             } else if (userGoal == 'Gain Weight') {
                 dailyCals = userRange * (1/100) * (1/7) * 7700;
                 valueCals = valueTDEE + dailyCals;
                 console.log(valueCals);
                 calG.textContent = `${Math.floor(valueCals)}`;
+                calDB.textContent = `${Math.floor(valueCals)}`;
                 valueProtein = valueCals * (0.3/4);
                 console.log(valueProtein);
                 proteinG.textContent = `${Math.floor(valueProtein)}`;
+                proteinDB.textContent = `${Math.floor(valueProtein)}`;
                 valueCarbs = valueCals * (0.4/4);
                 console.log(valueCarbs);
                 carbsG.textContent = `${Math.floor(valueCarbs)}`;
+                carbsDB.textContent = `${Math.floor(valueCarbs)}`;
                 valueFat = valueCals * (0.3/9);
                 console.log(valueFat);
                 fatG.textContent = `${Math.floor(valueFat)}`;
+                fatDB.textContent = `${Math.floor(valueFat)}`;
+                valueFiber = 25;
+                console.log(valueFiber);
+                fiberDB.textContent = `${valueFiber}`;
             } else {
                 console.log(valueCals);
             }
@@ -460,43 +552,64 @@ function calcCalories() {
                 valueCals = valueTDEE - dailyCals;
                 console.log(valueCals);
                 calG.textContent = `${Math.floor(valueCals)}`;
+                calDB.textContent = `${Math.floor(valueCals)}`;
                 valueProtein = valueCals * (0.35/4);
                 console.log(valueProtein);
                 proteinG.textContent = `${Math.floor(valueProtein)}`;
+                proteinDB.textContent = `${Math.floor(valueProtein)}`;
                 valueCarbs = valueCals * (0.45/4);
                 console.log(valueCarbs);
                 carbsG.textContent = `${Math.floor(valueCarbs)}`;
+                carbsDB.textContent = `${Math.floor(valueCarbs)}`;
                 valueFat = valueCals * (0.2/9);
                 console.log(valueFat);
                 fatG.textContent = `${Math.floor(valueFat)}`;
+                fatDB.textContent = `${Math.floor(valueFat)}`;
+                valueFiber = 25;
+                console.log(valueFiber);
+                fiberDB.textContent = `${valueFiber}`;
             } else if (userGoal == 'Maintain Weight') {
                 dailyCals = userRange * (1/100) * (1/7) * 7700;
                 valueCals = valueTDEE;
                 console.log(valueCals);
                 calG.textContent = `${Math.floor(valueCals)}`;
+                calDB.textContent = `${Math.floor(valueCals)}`;
                 valueProtein = valueCals * (0.3/4);
                 console.log(valueProtein);
                 proteinG.textContent = `${Math.floor(valueProtein)}`;
+                proteinDB.textContent = `${Math.floor(valueProtein)}`;
                 valueCarbs = valueCals * (0.4/4);
                 console.log(valueCarbs);
                 carbsG.textContent = `${Math.floor(valueCarbs)}`;
+                carbsDB.textContent = `${Math.floor(valueCarbs)}`;
                 valueFat = valueCals * (0.3/9);
                 console.log(valueFat);
                 fatG.textContent = `${Math.floor(valueFat)}`;
+                fatDB.textContent = `${Math.floor(valueFat)}`;
+                valueFiber = 25;
+                console.log(valueFiber);
+                fiberDB.textContent = `${valueFiber}`;
             } else if (userGoal == 'Gain Weight') {
                 dailyCals = userRange * (1/100) * (1/7) * 7700;
                 valueCals = valueTDEE + dailyCals;
                 console.log(valueCals);
                 calG.textContent = `${Math.floor(valueCals)}`;
+                calDB.textContent = `${Math.floor(valueCals)}`;
                 valueProtein = valueCals * (0.3/4);
                 console.log(valueProtein);
                 proteinG.textContent = `${Math.floor(valueProtein)}`;
+                proteinDB.textContent = `${Math.floor(valueProtein)}`;
                 valueCarbs = valueCals * (0.4/4);
                 console.log(valueCarbs);
                 carbsG.textContent = `${Math.floor(valueCarbs)}`;
+                carbsDB.textContent = `${Math.floor(valueCarbs)}`;
                 valueFat = valueCals * (0.3/9);
                 console.log(valueFat);
                 fatG.textContent = `${Math.floor(valueFat)}`;
+                fatDB.textContent = `${Math.floor(valueFat)}`;
+                valueFiber = 25;
+                console.log(valueFiber);
+                fiberDB.textContent = `${valueFiber}`;
             } else {
                 console.log(valueCals);
             }
@@ -508,43 +621,64 @@ function calcCalories() {
                 valueCals = valueTDEE - dailyCals;
                 console.log(valueCals);
                 calG.textContent = `${Math.floor(valueCals)}`;
+                calDB.textContent = `${Math.floor(valueCals)}`;
                 valueProtein = valueCals * (0.35/4);
                 console.log(valueProtein);
                 proteinG.textContent = `${Math.floor(valueProtein)}`;
+                proteinDB.textContent = `${Math.floor(valueProtein)}`;
                 valueCarbs = valueCals * (0.45/4);
                 console.log(valueCarbs);
                 carbsG.textContent = `${Math.floor(valueCarbs)}`;
+                carbsDB.textContent = `${Math.floor(valueCarbs)}`;
                 valueFat = valueCals * (0.2/9);
                 console.log(valueFat);
                 fatG.textContent = `${Math.floor(valueFat)}`;
+                fatDB.textContent = `${Math.floor(valueFat)}`;
+                valueFiber = 25;
+                console.log(valueFiber);
+                fiberDB.textContent = `${valueFiber}`;
             } else if (userGoal == 'Maintain Weight') {
                 dailyCals = userRange * (1/100) * (1/7) * 7700;
                 valueCals = valueTDEE;
                 console.log(valueCals);
                 calG.textContent = `${Math.floor(valueCals)}`;
+                calDB.textContent = `${Math.floor(valueCals)}`;
                 valueProtein = valueCals * (0.3/4);
                 console.log(valueProtein);
                 proteinG.textContent = `${Math.floor(valueProtein)}`;
+                proteinDB.textContent = `${Math.floor(valueProtein)}`;
                 valueCarbs = valueCals * (0.4/4);
                 console.log(valueCarbs);
                 carbsG.textContent = `${Math.floor(valueCarbs)}`;
+                carbsDB.textContent = `${Math.floor(valueCarbs)}`;
                 valueFat = valueCals * (0.3/9);
                 console.log(valueFat);
                 fatG.textContent = `${Math.floor(valueFat)}`;
+                fatDB.textContent = `${Math.floor(valueFat)}`;
+                valueFiber = 25;
+                console.log(valueFiber);
+                fiberDB.textContent = `${valueFiber}`;
             } else if (userGoal == 'Gain Weight') {
                 dailyCals = userRange * (1/100) * (1/7) * 7700;
                 valueCals = valueTDEE + dailyCals;
                 console.log(valueCals);
                 calG.textContent = `${Math.floor(valueCals)}`;
+                calDB.textContent = `${Math.floor(valueCals)}`;
                 valueProtein = valueCals * (0.3/4);
                 console.log(valueProtein);
                 proteinG.textContent = `${Math.floor(valueProtein)}`;
+                proteinDB.textContent = `${Math.floor(valueProtein)}`;
                 valueCarbs = valueCals * (0.4/4);
                 console.log(valueCarbs);
                 carbsG.textContent = `${Math.floor(valueCarbs)}`;
+                carbsDB.textContent = `${Math.floor(valueCarbs)}`;
                 valueFat = valueCals * (0.3/9);
                 console.log(valueFat);
                 fatG.textContent = `${Math.floor(valueFat)}`;
+                fatDB.textContent = `${Math.floor(valueFat)}`;
+                valueFiber = 25;
+                console.log(valueFiber);
+                fiberDB.textContent = `${valueFiber}`;
             } else {
                 console.log(valueCals);
             }
@@ -555,6 +689,487 @@ function calcCalories() {
         alert(`Please go fill all the details`);
     }
 }
+
+function setExercise() {
+    let exerciseSelect = document.getElementById('exerciseSelect').value;
+    localStorage.setItem('exerciseSelects', exerciseSelect);
+}
+
+function getExercise() {
+    let exerciseSelect = localStorage.getItem('exerciseSelects');
+    console.log(exerciseSelect);
+}
+
+function setExerciseTime() {
+    let exerciseTime = document.getElementById('exerciseTime').value;
+    localStorage.setItem('exerciseTimes', exerciseTime);
+}
+
+function getExerciseTime() {
+    let exerciseTime = localStorage.getItem('exerciseTimes');
+    console.log(exerciseTime);
+}
+
+function getCaloriesBurned() {
+    let valueBMR;
+    let valueTDEE;
+    let dailyCals;
+    let valueCals;
+    let valueProtein;
+    let valueCarbs;
+    let valueFat;
+    let valueFiber;
+    let userSex = localStorage.getItem('userSexs');
+    let currentWeight = parseInt(localStorage.getItem('currentWeights'));
+    let height = parseInt(localStorage.getItem('heights'));
+    let userDOB = localStorage.getItem('userDOBs');
+    let nowYear = new Date().getFullYear();
+    let userAge = nowYear - userDOB;
+    let userJob = localStorage.getItem('userJobs');
+    let userGoal = localStorage.getItem('userGoals');
+    let userRange = localStorage.getItem('userRanges');
+
+    let caloriesBurned;
+    let newValueCals;
+    let exerciseSelect = parseInt(localStorage.getItem('exerciseSelects'));
+    let exerciseTime = parseInt(localStorage.getItem('exerciseTimes'));
+    caloriesBurned = Math.floor(exerciseTime * exerciseSelect * currentWeight * (3.5/200));
+    console.log(caloriesBurned);
+
+    if(userSex == 'Male') {
+        valueBMR = 88.362 + (13.397 * currentWeight) + (4.799 * height) - (5.677 * userAge);
+        console.log(valueBMR);
+        if (userJob == 'Desk Job') {
+            valueTDEE = valueBMR * 1.2;
+            console.log(valueTDEE);
+            if(userGoal == 'Lose Weight') {
+                dailyCals = userRange * (1/100) * (1/7) * 7700;
+                valueCals = valueTDEE - dailyCals;
+                console.log(valueCals);
+                newValueCals = valueCals + caloriesBurned;
+                calDB.textContent = `${Math.floor(newValueCals)}`;
+                valueProtein = newValueCals * (0.35/4);
+                console.log(valueProtein);
+                proteinDB.textContent = `${Math.floor(valueProtein)}`;
+                valueCarbs = newValueCals * (0.45/4);
+                console.log(valueCarbs);
+                carbsDB.textContent = `${Math.floor(valueCarbs)}`;
+                valueFat = newValueCals * (0.2/9);
+                console.log(valueFat);
+                fatDB.textContent = `${Math.floor(valueFat)}`;
+                valueFiber = 38;
+                console.log(valueFiber);
+                fiberDB.textContent = `${valueFiber}`;
+
+            } else if (userGoal == 'Maintain Weight') {
+                dailyCals = userRange * (1/100) * (1/7) * 7700;
+                valueCals = valueTDEE;
+                console.log(valueCals);
+                newValueCals = valueCals + caloriesBurned;
+                calDB.textContent = `${Math.floor(newValueCals)}`;
+                valueProtein = valueCals * (0.3/4);
+                console.log(valueProtein);
+                proteinG.textContent = `${Math.floor(valueProtein)}`;
+                proteinDB.textContent = `${Math.floor(valueProtein)}`;
+                valueCarbs = valueCals * (0.4/4);
+                console.log(valueCarbs);
+                carbsG.textContent = `${Math.floor(valueCarbs)}`;
+                carbsDB.textContent = `${Math.floor(valueCarbs)}`;
+                valueFat = valueCals * (0.3/9);
+                console.log(valueFat);
+                fatG.textContent = `${Math.floor(valueFat)}`;
+                fatDB.textContent = `${Math.floor(valueFat)}`;
+                valueFiber = 38;
+                console.log(valueFiber);
+                fiberDB.textContent = `${valueFiber}`;
+            } else if (userGoal == 'Gain Weight') {
+                dailyCals = userRange * (1/100) * (1/7) * 7700;
+                valueCals = valueTDEE + dailyCals;
+                console.log(valueCals);
+                newValueCals = valueCals + caloriesBurned;
+                calDB.textContent = `${Math.floor(newValueCals)}`;
+                valueProtein = valueCals * (0.3/4);
+                console.log(valueProtein);
+                proteinG.textContent = `${Math.floor(valueProtein)}`;
+                proteinDB.textContent = `${Math.floor(valueProtein)}`;
+                valueCarbs = valueCals * (0.4/4);
+                console.log(valueCarbs);
+                carbsG.textContent = `${Math.floor(valueCarbs)}`;
+                carbsDB.textContent = `${Math.floor(valueCarbs)}`;
+                valueFat = valueCals * (0.3/9);
+                console.log(valueFat);
+                fatG.textContent = `${Math.floor(valueFat)}`;
+                fatDB.textContent = `${Math.floor(valueFat)}`;
+                valueFiber = 38;
+                console.log(valueFiber);
+                fiberDB.textContent = `${valueFiber}`;
+            } else {
+                console.log(valueCals);
+            }
+        } else if (userJob == 'Warehouse Job') {
+            valueTDEE = valueBMR * 1.375;
+            console.log(valueTDEE);
+            if(userGoal == 'Lose Weight') {
+                dailyCals = userRange * (1/100) * (1/7) * 7700;
+                valueCals = valueTDEE - dailyCals;
+                console.log(valueCals);
+                newValueCals = valueCals + caloriesBurned;
+                calDB.textContent = `${Math.floor(newValueCals)}`;
+                valueProtein = valueCals * (0.35/4);
+                console.log(valueProtein);
+                proteinG.textContent = `${Math.floor(valueProtein)}`;
+                proteinDB.textContent = `${Math.floor(valueProtein)}`;
+                valueCarbs = valueCals * (0.45/4);
+                console.log(valueCarbs);
+                carbsG.textContent = `${Math.floor(valueCarbs)}`;
+                carbsDB.textContent = `${Math.floor(valueCarbs)}`;
+                valueFat = valueCals * (0.2/9);
+                console.log(valueFat);
+                fatG.textContent = `${Math.floor(valueFat)}`;
+                fatDB.textContent = `${Math.floor(valueFat)}`;
+                valueFiber = 38;
+                console.log(valueFiber);
+                fiberDB.textContent = `${valueFiber}`;
+            } else if (userGoal == 'Maintain Weight') {
+                dailyCals = userRange * (1/100) * (1/7) * 7700;
+                valueCals = valueTDEE;
+                console.log(valueCals);
+                newValueCals = valueCals + caloriesBurned;
+                calDB.textContent = `${Math.floor(newValueCals)}`;
+                valueProtein = valueCals * (0.3/4);
+                console.log(valueProtein);
+                proteinG.textContent = `${Math.floor(valueProtein)}`;
+                proteinDB.textContent = `${Math.floor(valueProtein)}`;
+                valueCarbs = valueCals * (0.4/4);
+                console.log(valueCarbs);
+                carbsG.textContent = `${Math.floor(valueCarbs)}`;
+                carbsDB.textContent = `${Math.floor(valueCarbs)}`;
+                valueFat = valueCals * (0.3/9);
+                console.log(valueFat);
+                fatG.textContent = `${Math.floor(valueFat)}`;
+                fatDB.textContent = `${Math.floor(valueFat)}`;
+                valueFiber = 38;
+                console.log(valueFiber);
+                fiberDB.textContent = `${valueFiber}`;
+            } else if (userGoal == 'Gain Weight') {
+                dailyCals = userRange * (1/100) * (1/7) * 7700;
+                valueCals = valueTDEE + dailyCals;
+                console.log(valueCals);
+                newValueCals = valueCals + caloriesBurned;
+                calDB.textContent = `${Math.floor(newValueCals)}`;
+                valueProtein = valueCals * (0.3/4);
+                console.log(valueProtein);
+                proteinG.textContent = `${Math.floor(valueProtein)}`;
+                proteinDB.textContent = `${Math.floor(valueProtein)}`;
+                valueCarbs = valueCals * (0.4/4);
+                console.log(valueCarbs);
+                carbsG.textContent = `${Math.floor(valueCarbs)}`;
+                carbsDB.textContent = `${Math.floor(valueCarbs)}`;
+                valueFat = valueCals * (0.3/9);
+                console.log(valueFat);
+                fatG.textContent = `${Math.floor(valueFat)}`;
+                fatDB.textContent = `${Math.floor(valueFat)}`;
+                valueFiber = 38;
+                console.log(valueFiber);
+                fiberDB.textContent = `${valueFiber}`;
+            } else {
+                console.log(valueCals);
+            }
+        } else if (userJob == 'Field Job') {
+            valueTDEE = valueBMR * 1.6;
+            console.log(valueTDEE);
+            if(userGoal == 'Lose Weight') {
+                dailyCals = userRange * (1/100) * (1/7) * 7700;
+                valueCals = valueTDEE - dailyCals;
+                console.log(valueCals);
+                newValueCals = valueCals + caloriesBurned;
+                calDB.textContent = `${Math.floor(newValueCals)}`;
+                valueProtein = valueCals * (0.35/4);
+                console.log(valueProtein);
+                proteinG.textContent = `${Math.floor(valueProtein)}`;
+                proteinDB.textContent = `${Math.floor(valueProtein)}`;
+                valueCarbs = valueCals * (0.45/4);
+                console.log(valueCarbs);
+                carbsG.textContent = `${Math.floor(valueCarbs)}`;
+                carbsDB.textContent = `${Math.floor(valueCarbs)}`;
+                valueFat = valueCals * (0.2/9);
+                console.log(valueFat);
+                fatG.textContent = `${Math.floor(valueFat)}`;
+                fatDB.textContent = `${Math.floor(valueFat)}`;
+                valueFiber = 38;
+                console.log(valueFiber);
+                fiberDB.textContent = `${valueFiber}`;
+            } else if (userGoal == 'Maintain Weight') {
+                dailyCals = userRange * (1/100) * (1/7) * 7700;
+                valueCals = valueTDEE;
+                console.log(valueCals);
+                newValueCals = valueCals + caloriesBurned;
+                calDB.textContent = `${Math.floor(newValueCals)}`;
+                valueProtein = valueCals * (0.3/4);
+                console.log(valueProtein);
+                proteinG.textContent = `${Math.floor(valueProtein)}`;
+                proteinDB.textContent = `${Math.floor(valueProtein)}`;
+                valueCarbs = valueCals * (0.4/4);
+                console.log(valueCarbs);
+                carbsG.textContent = `${Math.floor(valueCarbs)}`;
+                carbsDB.textContent = `${Math.floor(valueCarbs)}`;
+                valueFat = valueCals * (0.3/9);
+                console.log(valueFat);
+                fatG.textContent = `${Math.floor(valueFat)}`;
+                fatDB.textContent = `${Math.floor(valueFat)}`;
+                valueFiber = 38;
+                console.log(valueFiber);
+                fiberDB.textContent = `${valueFiber}`;
+            } else if (userGoal == 'Gain Weight') {
+                dailyCals = userRange * (1/100) * (1/7) * 7700;
+                valueCals = valueTDEE + dailyCals;
+                console.log(valueCals);
+                newValueCals = valueCals + caloriesBurned;
+                calDB.textContent = `${Math.floor(newValueCals)}`;
+                valueProtein = valueCals * (0.3/4);
+                console.log(valueProtein);
+                proteinG.textContent = `${Math.floor(valueProtein)}`;
+                proteinDB.textContent = `${Math.floor(valueProtein)}`;
+                valueCarbs = valueCals * (0.4/4);
+                console.log(valueCarbs);
+                carbsG.textContent = `${Math.floor(valueCarbs)}`;
+                carbsDB.textContent = `${Math.floor(valueCarbs)}`;
+                valueFat = valueCals * (0.3/9);
+                console.log(valueFat);
+                fatG.textContent = `${Math.floor(valueFat)}`;
+                fatDB.textContent = `${Math.floor(valueFat)}`;
+                valueFiber = 38;
+                console.log(valueFiber);
+                fiberDB.textContent = `${valueFiber}`;
+            } else {
+                console.log(valueCals);
+            }
+        } else {
+            alert(`Please go select your job`);
+        }
+    } else if (userSex == 'Female') {
+        valueBMR = 447.593 + (9.247 * currentWeight) + (3.098 * height) - (4.330 * userAge);
+        console.log(valueBMR);
+        if (userJob == 'Desk Job') {
+            valueTDEE = valueBMR * 1.2;
+            console.log(valueTDEE);
+            if(userGoal == 'Lose Weight') {
+                dailyCals = userRange * (1/100) * (1/7) * 7700;
+                valueCals = valueTDEE - dailyCals;
+                console.log(valueCals);
+                newValueCals = valueCals + caloriesBurned;
+                calDB.textContent = `${Math.floor(newValueCals)}`;
+                valueProtein = valueCals * (0.35/4);
+                console.log(valueProtein);
+                proteinG.textContent = `${Math.floor(valueProtein)}`;
+                proteinDB.textContent = `${Math.floor(valueProtein)}`;
+                valueCarbs = valueCals * (0.45/4);
+                console.log(valueCarbs);
+                carbsG.textContent = `${Math.floor(valueCarbs)}`;
+                carbsDB.textContent = `${Math.floor(valueCarbs)}`;
+                valueFat = valueCals * (0.2/9);
+                console.log(valueFat);
+                fatG.textContent = `${Math.floor(valueFat)}`;
+                fatDB.textContent = `${Math.floor(valueFat)}`;
+                valueFiber = 25;
+                console.log(valueFiber);
+                fiberDB.textContent = `${valueFiber}`;
+            } else if (userGoal == 'Maintain Weight') {
+                dailyCals = userRange * (1/100) * (1/7) * 7700;
+                valueCals = valueTDEE;
+                console.log(valueCals);
+                newValueCals = valueCals + caloriesBurned;
+                calDB.textContent = `${Math.floor(newValueCals)}`;
+                valueProtein = valueCals * (0.3/4);
+                console.log(valueProtein);
+                proteinG.textContent = `${Math.floor(valueProtein)}`;
+                proteinDB.textContent = `${Math.floor(valueProtein)}`;
+                valueCarbs = valueCals * (0.4/4);
+                console.log(valueCarbs);
+                carbsG.textContent = `${Math.floor(valueCarbs)}`;
+                carbsDB.textContent = `${Math.floor(valueCarbs)}`;
+                valueFat = valueCals * (0.3/9);
+                console.log(valueFat);
+                fatG.textContent = `${Math.floor(valueFat)}`;
+                fatDB.textContent = `${Math.floor(valueFat)}`;
+                valueFiber = 25;
+                console.log(valueFiber);
+                fiberDB.textContent = `${valueFiber}`;
+            } else if (userGoal == 'Gain Weight') {
+                dailyCals = userRange * (1/100) * (1/7) * 7700;
+                valueCals = valueTDEE + dailyCals;
+                console.log(valueCals);
+                newValueCals = valueCals + caloriesBurned;
+                calDB.textContent = `${Math.floor(newValueCals)}`;
+                valueProtein = valueCals * (0.3/4);
+                console.log(valueProtein);
+                proteinG.textContent = `${Math.floor(valueProtein)}`;
+                proteinDB.textContent = `${Math.floor(valueProtein)}`;
+                valueCarbs = valueCals * (0.4/4);
+                console.log(valueCarbs);
+                carbsG.textContent = `${Math.floor(valueCarbs)}`;
+                carbsDB.textContent = `${Math.floor(valueCarbs)}`;
+                valueFat = valueCals * (0.3/9);
+                console.log(valueFat);
+                fatG.textContent = `${Math.floor(valueFat)}`;
+                fatDB.textContent = `${Math.floor(valueFat)}`;
+                valueFiber = 25;
+                console.log(valueFiber);
+                fiberDB.textContent = `${valueFiber}`;
+            } else {
+                console.log(valueCals);
+            }
+        } else if (userJob == 'Warehouse Job') {
+            valueTDEE = valueBMR * 1.375;
+            console.log(valueTDEE);
+            if(userGoal == 'Lose Weight') {
+                dailyCals = userRange * (1/100) * (1/7) * 7700;
+                valueCals = valueTDEE - dailyCals;
+                console.log(valueCals);
+                newValueCals = valueCals + caloriesBurned;
+                calDB.textContent = `${Math.floor(newValueCals)}`;
+                valueProtein = valueCals * (0.35/4);
+                console.log(valueProtein);
+                proteinG.textContent = `${Math.floor(valueProtein)}`;
+                proteinDB.textContent = `${Math.floor(valueProtein)}`;
+                valueCarbs = valueCals * (0.45/4);
+                console.log(valueCarbs);
+                carbsG.textContent = `${Math.floor(valueCarbs)}`;
+                carbsDB.textContent = `${Math.floor(valueCarbs)}`;
+                valueFat = valueCals * (0.2/9);
+                console.log(valueFat);
+                fatG.textContent = `${Math.floor(valueFat)}`;
+                fatDB.textContent = `${Math.floor(valueFat)}`;
+                valueFiber = 25;
+                console.log(valueFiber);
+                fiberDB.textContent = `${valueFiber}`;
+            } else if (userGoal == 'Maintain Weight') {
+                dailyCals = userRange * (1/100) * (1/7) * 7700;
+                valueCals = valueTDEE;
+                console.log(valueCals);
+                newValueCals = valueCals + caloriesBurned;
+                calDB.textContent = `${Math.floor(newValueCals)}`;
+                valueProtein = valueCals * (0.3/4);
+                console.log(valueProtein);
+                proteinG.textContent = `${Math.floor(valueProtein)}`;
+                proteinDB.textContent = `${Math.floor(valueProtein)}`;
+                valueCarbs = valueCals * (0.4/4);
+                console.log(valueCarbs);
+                carbsG.textContent = `${Math.floor(valueCarbs)}`;
+                carbsDB.textContent = `${Math.floor(valueCarbs)}`;
+                valueFat = valueCals * (0.3/9);
+                console.log(valueFat);
+                fatG.textContent = `${Math.floor(valueFat)}`;
+                fatDB.textContent = `${Math.floor(valueFat)}`;
+                valueFiber = 25;
+                console.log(valueFiber);
+                fiberDB.textContent = `${valueFiber}`;
+            } else if (userGoal == 'Gain Weight') {
+                dailyCals = userRange * (1/100) * (1/7) * 7700;
+                valueCals = valueTDEE + dailyCals;
+                console.log(valueCals);
+                newValueCals = valueCals + caloriesBurned;
+                calDB.textContent = `${Math.floor(newValueCals)}`;
+                valueProtein = valueCals * (0.3/4);
+                console.log(valueProtein);
+                proteinG.textContent = `${Math.floor(valueProtein)}`;
+                proteinDB.textContent = `${Math.floor(valueProtein)}`;
+                valueCarbs = valueCals * (0.4/4);
+                console.log(valueCarbs);
+                carbsG.textContent = `${Math.floor(valueCarbs)}`;
+                carbsDB.textContent = `${Math.floor(valueCarbs)}`;
+                valueFat = valueCals * (0.3/9);
+                console.log(valueFat);
+                fatG.textContent = `${Math.floor(valueFat)}`;
+                fatDB.textContent = `${Math.floor(valueFat)}`;
+                valueFiber = 25;
+                console.log(valueFiber);
+                fiberDB.textContent = `${valueFiber}`;
+            } else {
+                console.log(valueCals);
+            }
+        } else if (userJob == 'Field Job') {
+            valueTDEE = valueBMR * 1.6;
+            console.log(valueTDEE);
+            if(userGoal == 'Lose Weight') {
+                dailyCals = userRange * (1/100) * (1/7) * 7700;
+                valueCals = valueTDEE - dailyCals;
+                console.log(valueCals);
+                newValueCals = valueCals + caloriesBurned;
+                calDB.textContent = `${Math.floor(newValueCals)}`;
+                valueProtein = valueCals * (0.35/4);
+                console.log(valueProtein);
+                proteinG.textContent = `${Math.floor(valueProtein)}`;
+                proteinDB.textContent = `${Math.floor(valueProtein)}`;
+                valueCarbs = valueCals * (0.45/4);
+                console.log(valueCarbs);
+                carbsG.textContent = `${Math.floor(valueCarbs)}`;
+                carbsDB.textContent = `${Math.floor(valueCarbs)}`;
+                valueFat = valueCals * (0.2/9);
+                console.log(valueFat);
+                fatG.textContent = `${Math.floor(valueFat)}`;
+                fatDB.textContent = `${Math.floor(valueFat)}`;
+                valueFiber = 25;
+                console.log(valueFiber);
+                fiberDB.textContent = `${valueFiber}`;
+            } else if (userGoal == 'Maintain Weight') {
+                dailyCals = userRange * (1/100) * (1/7) * 7700;
+                valueCals = valueTDEE;
+                console.log(valueCals);
+                newValueCals = valueCals + caloriesBurned;
+                calDB.textContent = `${Math.floor(newValueCals)}`;
+                valueProtein = valueCals * (0.3/4);
+                console.log(valueProtein);
+                proteinG.textContent = `${Math.floor(valueProtein)}`;
+                proteinDB.textContent = `${Math.floor(valueProtein)}`;
+                valueCarbs = valueCals * (0.4/4);
+                console.log(valueCarbs);
+                carbsG.textContent = `${Math.floor(valueCarbs)}`;
+                carbsDB.textContent = `${Math.floor(valueCarbs)}`;
+                valueFat = valueCals * (0.3/9);
+                console.log(valueFat);
+                fatG.textContent = `${Math.floor(valueFat)}`;
+                fatDB.textContent = `${Math.floor(valueFat)}`;
+                valueFiber = 25;
+                console.log(valueFiber);
+                fiberDB.textContent = `${valueFiber}`;
+            } else if (userGoal == 'Gain Weight') {
+                dailyCals = userRange * (1/100) * (1/7) * 7700;
+                valueCals = valueTDEE + dailyCals;
+                console.log(valueCals);
+                newValueCals = valueCals + caloriesBurned;
+                calDB.textContent = `${Math.floor(newValueCals)}`;
+                valueProtein = valueCals * (0.3/4);
+                console.log(valueProtein);
+                proteinG.textContent = `${Math.floor(valueProtein)}`;
+                proteinDB.textContent = `${Math.floor(valueProtein)}`;
+                valueCarbs = valueCals * (0.4/4);
+                console.log(valueCarbs);
+                carbsG.textContent = `${Math.floor(valueCarbs)}`;
+                carbsDB.textContent = `${Math.floor(valueCarbs)}`;
+                valueFat = valueCals * (0.3/9);
+                console.log(valueFat);
+                fatG.textContent = `${Math.floor(valueFat)}`;
+                fatDB.textContent = `${Math.floor(valueFat)}`;
+                valueFiber = 25;
+                console.log(valueFiber);
+                fiberDB.textContent = `${valueFiber}`;
+            } else {
+                console.log(valueCals);
+            }
+        } else {
+            alert(`Please go select your job`);
+        }
+    } else {
+        alert(`Please go fill all the details`);
+    }
+}
+
+
+
+
+
+
 
 
 
