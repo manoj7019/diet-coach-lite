@@ -420,3 +420,10 @@ a {
     height: 1.5rem;
     margin: 0 1rem;
 }
+
+.metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px;
+}
